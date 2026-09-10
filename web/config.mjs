@@ -1,0 +1,1 @@
+export default {"slug": "cnnum", "title": "中文数字与金额", "description": "确定性整数中文读写和精确分单位大写金额", "source": "https://zh.wikipedia.org/wiki/中文数字", "scope": "正负整数、万亿分组、常用/财务数字、精确角分", "limitations": "任意精度、口语歧义、外币规则、浮点金额输入", "version": "0.1.0", "example": "12345678.09"};

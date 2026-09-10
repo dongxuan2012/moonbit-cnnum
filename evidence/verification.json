@@ -1,0 +1,49 @@
+{
+  "project": "cnnum",
+  "checks": [
+    {
+      "command": "moon fmt",
+      "exit_code": 0,
+      "output": "Finished. moon: ran 9 tasks, now up to date\n",
+      "utc": "2026-09-09T18:52:43.044368+00:00"
+    },
+    {
+      "command": "moon info",
+      "exit_code": 0,
+      "output": "Finished. moon: ran 2 tasks, now up to date\n",
+      "utc": "2026-09-09T18:52:43.235186+00:00"
+    },
+    {
+      "command": "moon check --deny-warn",
+      "exit_code": 0,
+      "output": "Finished. moon: ran 2 tasks, now up to date\n",
+      "utc": "2026-09-09T18:52:43.590497+00:00"
+    },
+    {
+      "command": "moon test --deny-warn",
+      "exit_code": 0,
+      "output": "Total tests: 4, passed: 4, failed: 0.\n",
+      "utc": "2026-09-09T18:52:43.979827+00:00"
+    },
+    {
+      "command": "moon test --target js --deny-warn",
+      "exit_code": 0,
+      "output": "Total tests: 4, passed: 4, failed: 0.\n",
+      "utc": "2026-09-09T18:52:44.541762+00:00"
+    },
+    {
+      "command": "moon build --target js --deny-warn",
+      "exit_code": 0,
+      "output": "Finished. moon: no work to do\n",
+      "utc": "2026-09-09T18:52:44.894290+00:00"
+    },
+    {
+      "command": "moon run cmd/main",
+      "exit_code": 0,
+      "output": "一亿零一万零一\n壹仟贰佰叁拾肆万伍仟陆佰柒拾捌元零玖分\n",
+      "utc": "2026-09-09T18:52:45.041064+00:00"
+    }
+  ],
+  "demo": "一亿零一万零一\n壹仟贰佰叁拾肆万伍仟陆佰柒拾捌元零玖分",
+  "source_lines": 257
+}

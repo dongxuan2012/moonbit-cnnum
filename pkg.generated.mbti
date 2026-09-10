@@ -1,0 +1,26 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "localreview/cnnum"
+
+import {
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub fn format_integer(Int64, financial? : Bool) -> String raise NumberError
+
+pub fn format_money(Int64) -> String raise NumberError
+
+pub fn parse_decimal_cents(String) -> Int64 raise NumberError
+
+pub fn parse_integer(String) -> Int64 raise NumberError
+
+// Errors
+pub suberror NumberError {
+  Invalid(String)
+} derive(@debug.Debug)
+
+// Types and methods
+
+// Type aliases
+
+// Traits

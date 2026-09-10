@@ -1,0 +1,5 @@
+import {
+  "localreview/cnnum" @lib,
+}
+
+pkgtype(kind: "executable")
