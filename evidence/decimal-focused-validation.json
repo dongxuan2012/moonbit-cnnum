@@ -1,0 +1,12 @@
+{
+  "date": "2026-09-10T14:05:08.086Z",
+  "moonTestsPassed": 4,
+  "command": "moon test --target js --filter decimal* --deny-warn",
+  "bridgeGoldenCases": 7,
+  "cliExactPrecisionPassed": true,
+  "malformedBridgeRejected": true,
+  "engineSha256": "9f9357f34850ed645c941af775aaffe521c02008a7de24da90789f607a22bc8c",
+  "reference": "https://github.com/Ailln/cn2an",
+  "independentOracleRun": false,
+  "browserVisualTested": false
+}

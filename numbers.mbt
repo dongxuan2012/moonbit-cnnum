@@ -103,11 +103,14 @@ fn normalize(s : String) -> String {
 ///|
 /// Parses canonical output of format_integer (common or financial).
 /// Ambiguous colloquialisms such as 一万二 and serial digits 一二三 are rejected.
-pub fn parse_integer(text : String) -> Int64 raise NumberError {
+pub fn parse_integer(
+  text : String,
+  variants? : Bool = false,
+) -> Int64 raise NumberError {
   if text == "" || text.length() > 128 {
     raise Invalid("invalid length")
   }
-  let s = normalize(text)
+  let s = normalize(if variants { numeral_variants(text) } else { text })
   let neg = s.has_prefix("负")
   let body = if neg { s[1:].to_owned() } else { s }
   let mut total = 0L

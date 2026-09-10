@@ -6,15 +6,25 @@ import {
 }
 
 // Values
+pub fn format_decimal(String, financial? : Bool) -> String raise NumberError
+
+pub fn format_decimal_cents(Int64) -> String raise NumberError
+
+pub fn format_digits(String, financial? : Bool) -> String raise NumberError
+
 pub fn format_integer(Int64, financial? : Bool) -> String raise NumberError
 
 pub fn format_money(Int64) -> String raise NumberError
 
+pub fn parse_decimal(String, variants? : Bool) -> String raise NumberError
+
 pub fn parse_decimal_cents(String) -> Int64 raise NumberError
 
-pub fn parse_integer(String) -> Int64 raise NumberError
+pub fn parse_digits(String, variants? : Bool) -> String raise NumberError
 
-pub fn parse_money(String) -> Int64 raise NumberError
+pub fn parse_integer(String, variants? : Bool) -> Int64 raise NumberError
+
+pub fn parse_money(String, variants? : Bool) -> Int64 raise NumberError
 
 // Errors
 pub suberror NumberError {

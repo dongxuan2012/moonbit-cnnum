@@ -1,8 +1,19 @@
 ///|
 /// Parse the canonical output of format_money, including financial digits.
-pub fn parse_money(source : String) -> Int64 raise NumberError {
+pub fn parse_money(
+  source : String,
+  variants? : Bool = false,
+) -> Int64 raise NumberError {
   if source.length() > 100 {
     raise Invalid("amount text too long")
+  }
+  let source = if variants {
+    numeral_variants(source)
+    .replace_all(old="圓", new="元")
+    .replace_all(old="圆", new="元")
+    .replace_all(old="正", new="整")
+  } else {
+    source
   }
   let negative = source.has_prefix("负")
   let s = if negative { source[1:].to_owned() } else { source }

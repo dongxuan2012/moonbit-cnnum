@@ -1,13 +1,18 @@
 import config from './config.mjs';
-import {run} from './engine.mjs';
+import {convert} from './engine.mjs';
 const $=id=>document.getElementById(id);
-$('title').textContent=config.title+' · '+config.version;
-$('scope').textContent=config.scope;
-$('limits').textContent='当前不包含：'+config.limitations;
-$('input').value=config.example;
+const examples={money:'1234.05','parse-money':'壹仟贰佰叁拾肆元零伍分',decimal:'-0.0012300','parse-decimal':'负零点零零一二三零零',digits:'002026','parse-digits':'零零二零二六','parse-integer':'一万零一'};
+$('title').textContent=config.title+' · 0.3.0';
+$('scope').textContent='中文整数、精确小数、逐字数字和人民币金额互转。小数全程保留文本精度。';
+$('limits').textContent='整数绝对值最大 9,999,999,999,999,999；小数最多 64 位。金额精确到分；不猜测口语省略，不自动舍入。';
 function execute(){
- try{const start=performance.now(),output=run($('input').value);$('output').textContent=output;$('output').className=output.startsWith('ERROR:')?'error':'';$('status').textContent='执行 '+(performance.now()-start).toFixed(2)+' ms';$('tiles').hidden=true;
- if(config.slug==='wfc'&&!output.startsWith('ERROR:')){const rows=output.split('\n').slice(0,12);if(rows.every(x=>/^[~.^]{16}$/.test(x))){$('tiles').replaceChildren();for(const c of rows.join('')){const tile=document.createElement('span');tile.style.background={'~':'#446e83','.':'#99b984','^':'#c3b999'}[c];$('tiles').append(tile)}$('tiles').hidden=false}}
- }catch(e){$('output').textContent=String(e);$('output').className='error'}
+ try {
+  const output=convert($('mode').value,$('input').value,$('financial').checked,$('variants').checked);
+  const ok=!output.startsWith('ERROR:');
+  $('output').textContent=output;$('output').className=ok?'':'error';
+  $('status').textContent=ok?'转换完成':'请检查输入格式';
+ } catch(error) { $('output').textContent=String(error);$('output').className='error'; }
 }
-$('run').onclick=execute;$('reset').onclick=()=>{$('input').value=config.example;execute()};execute();
+function reset(){ $('input').value=examples[$('mode').value];execute(); }
+$('run').onclick=execute;$('reset').onclick=reset;$('mode').onchange=reset;
+$('financial').onchange=execute;$('variants').onchange=execute;reset();

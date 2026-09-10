@@ -13,16 +13,35 @@ function _M0TPC16string10StringView(param0, param1, param2) {
   this.start = param1;
   this.end = param2;
 }
+const _M0FPB19int__to__string__js = (x, radix) => {
+  return x.toString(radix);
+};
 const _M0FPB21int64__to__string__js = (num, radix) => BigInt.asIntN(64, num).toString(radix);
+function _M0TPB4IterGcE(param0, param1) {
+  this.f = param0;
+  this.size_hint = param1;
+}
+function _M0TPB4IterGRPC16string10StringViewE(param0, param1) {
+  this.f = param0;
+  this.size_hint = param1;
+}
+function _M0TPB8MutLocalGiE(param0) {
+  this.val = param0;
+}
+function $make_array_len_and_init(a, b) {
+  const arr = new Array(a);
+  arr.fill(b);
+  return arr;
+}
+const _M0MPB7JSArray4push = (arr, val) => { arr.push(val); };
 function _M0TPB4IterGsE(param0, param1) {
   this.f = param0;
   this.size_hint = param1;
 }
-const _M0MPB7JSArray4push = (arr, val) => { arr.push(val); };
-function _M0TPB8MutLocalGiE(param0) {
+function _M0TPB8MutLocalGORPC16string10StringViewE(param0) {
   this.val = param0;
 }
-function _M0TPB9ArrayViewGsE(param0, param1, param2) {
+function _M0TPB9ArrayViewGRPC16string10StringViewE(param0, param1, param2) {
   this.buf = param0;
   this.start = param1;
   this.end = param2;
@@ -32,7 +51,7 @@ const _M0MPB7JSArray12append__view = (dst, src, src_offset, len) => {
      dst.push(src[src_offset + i]);
    }
  };
-function _M0TPB9ArrayViewGRPC16string10StringViewE(param0, param1, param2) {
+function _M0TPB9ArrayViewGsE(param0, param1, param2) {
   this.buf = param0;
   this.start = param1;
   this.end = param2;
@@ -134,6 +153,10 @@ function _M0DTPC16result6ResultGsRP211localreview5cnnum11NumberErrorE2Ok(param0)
   this._0 = param0;
 }
 _M0DTPC16result6ResultGsRP211localreview5cnnum11NumberErrorE2Ok.prototype.$tag = 1;
+function _M0DTPC15error5Error48moonbitlang_2fcore_2fbuiltin_2eFailure_2eFailure(param0) {
+  this._0 = param0;
+}
+_M0DTPC15error5Error48moonbitlang_2fcore_2fbuiltin_2eFailure_2eFailure.prototype.$tag = 1;
 function _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid(param0) {
   this._0 = param0;
 }
@@ -149,11 +172,29 @@ _M0DTPC16result6ResultGlRP211localreview5cnnum11NumberErrorE2Ok.prototype.$tag =
 function _M0TPB8MutLocalGlE(param0) {
   this.val = param0;
 }
+function _M0DTPC16result6ResultGUbsOsERP211localreview5cnnum11NumberErrorE3Err(param0) {
+  this._0 = param0;
+}
+_M0DTPC16result6ResultGUbsOsERP211localreview5cnnum11NumberErrorE3Err.prototype.$tag = 0;
+function _M0DTPC16result6ResultGUbsOsERP211localreview5cnnum11NumberErrorE2Ok(param0) {
+  this._0 = param0;
+}
+_M0DTPC16result6ResultGUbsOsERP211localreview5cnnum11NumberErrorE2Ok.prototype.$tag = 1;
 const _M0FP092moonbitlang_2fcore_2fbuiltin_2fStringBuilder_24as_24_40moonbitlang_2fcore_2fbuiltin_2eLogger = { method_0: _M0IPB13StringBuilderPB6Logger13write__string, method_1: _M0IP016_24default__implPB6Logger16write__substringGRPB13StringBuilderE, method_2: _M0IPB13StringBuilderPB6Logger11write__view, method_3: _M0IPB13StringBuilderPB6Logger11write__char, method_4: _M0IP016_24default__implPB6Logger28write__string__interpolationGRPB13StringBuilderE, method_5: _M0IP016_24default__implPB6Logger5writeGRPB13StringBuilderE };
+function _M0FP15Error8to__repr(_e) {
+  if (_e.$tag === 0) {
+    return _M0IP211localreview5cnnum11NumberErrorPC15debug5Debug8to__reprGRP211localreview5cnnum11NumberErrorE(_e);
+  } else {
+    return _M0IPB7FailurePC15debug5Debug8to__reprGRPB7FailureE(_e);
+  }
+}
 const _M0MPC16string6String4trimN7_2abindS6861 = "\t\n\r ";
-const _M0MPB4Iter4nextN6constrS9855GsE = 0;
-const _M0MPB4Iter4nextN6constrS9856GsE = 0;
-const _M0MPB4Iter3newN6constrS9863GsE = 0;
+const _M0MPB4Iter4nextN6constrS9855GcE = 0;
+const _M0MPB4Iter4nextN6constrS9856GcE = 0;
+const _M0MPB4Iter4nextN6constrS9855GRPC16string10StringViewE = 0;
+const _M0MPB4Iter4nextN6constrS9856GRPC16string10StringViewE = 0;
+const _M0MPB4Iter3newN6constrS9863GcE = 0;
+const _M0MPB4Iter3newN6constrS9863GRPC16string10StringViewE = 0;
 const _M0FPC15debug14compact__linesN7_2abindS1134 = "";
 const _M0FPC15debug14compact__linesN7_2abindS1147 = " ";
 const _M0FPC15debug14compact__linesN7_2abindS1141 = ",";
@@ -168,10 +209,11 @@ const _M0FPC15debug14compact__linesN7_2abindS1166 = " ";
 const _M0FPC15debug19bracket__seq__linesN7_2abindS1175 = "";
 const _M0FPC15debug14print__contentN7_2abindS1244 = "\n";
 const _M0FPC15debug6renderN6constrS1705 = 16;
-function _M0FPC15abort5abortGOiE(msg) {
+const _M0MPC16string10StringView4findN6constrS9865 = 0;
+function _M0FPC15abort5abortGRPC16string10StringViewE(msg) {
   return $panic();
 }
-function _M0FPC15abort5abortGsE(msg) {
+function _M0FPC15abort5abortGOiE(msg) {
   return $panic();
 }
 function _M0MPC15array10FixedArray12unsafe__blitGRPB17UnsafeMaybeUninitGsEE(dst, dst_offset, src, src_offset, len) {
@@ -425,10 +467,13 @@ function _M0MPC16string10StringView12view_2einner(self, start_offset, end_offset
     const _Some = end_offset;
     end_offset$2 = _Some;
   }
-  return start_offset >= 0 && (start_offset <= end_offset$2 && end_offset$2 <= (self.end - self.start | 0)) ? new _M0TPC16string10StringView(self.str, self.start + start_offset | 0, self.start + end_offset$2 | 0) : _M0FPC15abort5abortGsE("Invalid index for View");
+  return start_offset >= 0 && (start_offset <= end_offset$2 && end_offset$2 <= (self.end - self.start | 0)) ? new _M0TPC16string10StringView(self.str, self.start + start_offset | 0, self.start + end_offset$2 | 0) : _M0FPC15abort5abortGRPC16string10StringViewE("Invalid index for View");
 }
 function _M0IPC16uint166UInt16PB2Eq5equal(self, that) {
   return self === that;
+}
+function _M0IPC16uint166UInt16PB2Eq10not__equal(self, that) {
+  return self !== that;
 }
 function _M0MPC16uint166UInt168to__uint(self) {
   return self;
@@ -476,6 +521,12 @@ function _M0MPC16string6String11sub_2einner(self, start, end) {
 function _M0IP016_24default__implPB6Logger16write__substringGRPB13StringBuilderE(self, value, start, len) {
   _M0IPB13StringBuilderPB6Logger11write__view(self, _M0MPC16string6String11sub_2einner(value, start, start + len | 0));
 }
+function _M0MPC16string10StringView4data(self) {
+  return self.str;
+}
+function _M0MPC16string10StringView13start__offset(self) {
+  return self.start;
+}
 function _M0IP016_24default__implPB4Show6outputGsE(self, logger) {
   logger.method_table.method_0(logger.self, _M0IPC16string6StringPB4Show10to__string(self));
 }
@@ -484,41 +535,92 @@ function _M0IP016_24default__implPB4Show10to__stringGRPC15debug4ReprE(self) {
   _M0IPC15debug4ReprPB4Show6output(self, { self: logger, method_table: _M0FP092moonbitlang_2fcore_2fbuiltin_2fStringBuilder_24as_24_40moonbitlang_2fcore_2fbuiltin_2eLogger });
   return _M0MPB13StringBuilder10to__string(logger);
 }
-function _M0MPB4Iter4nextGsE(self) {
+function _M0MPB4Iter4nextGcE(self) {
   const _func = self.f;
   const result = _func();
   const _bind = self.size_hint;
-  if (result === undefined) {
-    self.size_hint = _M0MPB4Iter4nextN6constrS9856GsE;
+  if (result === -1) {
+    self.size_hint = _M0MPB4Iter4nextN6constrS9856GcE;
   } else {
     if (_bind === undefined) {
     } else {
       const _Some = _bind;
       const _n = _Some;
-      self.size_hint = _n > 0 ? _n - 1 | 0 : _M0MPB4Iter4nextN6constrS9855GsE;
+      self.size_hint = _n > 0 ? _n - 1 | 0 : _M0MPB4Iter4nextN6constrS9855GcE;
     }
   }
   return result;
 }
+function _M0MPB4Iter4nextGRPC16string10StringViewE(self) {
+  const _func = self.f;
+  const result = _func();
+  const _bind = self.size_hint;
+  if (result === undefined) {
+    self.size_hint = _M0MPB4Iter4nextN6constrS9856GRPC16string10StringViewE;
+  } else {
+    if (_bind === undefined) {
+    } else {
+      const _Some = _bind;
+      const _n = _Some;
+      self.size_hint = _n > 0 ? _n - 1 | 0 : _M0MPB4Iter4nextN6constrS9855GRPC16string10StringViewE;
+    }
+  }
+  return result;
+}
+function _M0MPC13int3Int18to__string_2einner(self, radix) {
+  return _M0FPB19int__to__string__js(self, radix);
+}
 function _M0MPC15int645Int6418to__string_2einner(self, radix) {
   return _M0FPB21int64__to__string__js(self, radix);
 }
-function _M0MPB4Iter3newGsE(f, size_hint) {
+function _M0MPB4Iter3newGcE(f, size_hint) {
   let size_hint$2;
   if (size_hint === undefined) {
     size_hint$2 = undefined;
   } else {
     const _Some = size_hint;
     const _n = _Some;
-    size_hint$2 = _n > 0 ? _n : _M0MPB4Iter3newN6constrS9863GsE;
+    size_hint$2 = _n > 0 ? _n : _M0MPB4Iter3newN6constrS9863GcE;
   }
-  return new _M0TPB4IterGsE(f, size_hint$2);
+  return new _M0TPB4IterGcE(f, size_hint$2);
+}
+function _M0MPB4Iter3newGRPC16string10StringViewE(f, size_hint) {
+  let size_hint$2;
+  if (size_hint === undefined) {
+    size_hint$2 = undefined;
+  } else {
+    const _Some = size_hint;
+    const _n = _Some;
+    size_hint$2 = _n > 0 ? _n : _M0MPB4Iter3newN6constrS9863GRPC16string10StringViewE;
+  }
+  return new _M0TPB4IterGRPC16string10StringViewE(f, size_hint$2);
 }
 function _M0MPC16string10StringView9to__owned(self) {
   return self.str.substring(self.start, self.end);
 }
 function _M0IPC16string10StringViewPB4Show6output(self, logger) {
   logger.method_table.method_2(logger.self, self);
+}
+function _M0MPC16string10StringView4iter(self) {
+  const start = self.start;
+  const end = self.end;
+  const index = new _M0TPB8MutLocalGiE(start);
+  return _M0MPB4Iter3newGcE(() => {
+    if (index.val < end) {
+      const c1 = self.str.charCodeAt(index.val);
+      if (_M0MPC16uint166UInt1622is__leading__surrogate(c1) && (index.val + 1 | 0) < self.end) {
+        const c2 = self.str.charCodeAt(index.val + 1 | 0);
+        if (_M0MPC16uint166UInt1623is__trailing__surrogate(c2)) {
+          index.val = index.val + 2 | 0;
+          return _M0FPB32code__point__of__surrogate__pair(c1, c2);
+        }
+      }
+      index.val = index.val + 1 | 0;
+      return _M0MPC16uint166UInt1616unsafe__to__char(c1);
+    } else {
+      return -1;
+    }
+  }, undefined);
 }
 function _M0MPC16string10StringView3all(self, f) {
   const _bind = self.str;
@@ -588,6 +690,16 @@ function _M0IPC16string10StringViewPB2Eq5equal(self, other) {
     return false;
   }
 }
+function _M0MPC16string6String12view_2einner(self, start_offset, end_offset) {
+  let end_offset$2;
+  if (end_offset === undefined) {
+    end_offset$2 = self.length;
+  } else {
+    const _Some = end_offset;
+    end_offset$2 = _Some;
+  }
+  return start_offset >= 0 && (start_offset <= end_offset$2 && end_offset$2 <= self.length) ? new _M0TPC16string10StringView(self, start_offset, end_offset$2) : _M0FPC15abort5abortGRPC16string10StringViewE("Invalid index for View");
+}
 function _M0MPC16string6String31offset__of__nth__char__backward(self, n, start_offset, end_offset) {
   let _tmp = end_offset;
   let _tmp$2 = 0;
@@ -649,12 +761,200 @@ function _M0MPC16string6String29offset__of__nth__char_2einner(self, i, start_off
 function _M0IPB13StringBuilderPB6Logger11write__view(self, str) {
   self.val = `${self.val}${_M0MPC16string10StringView9to__owned(str)}`;
 }
+function _M0FPB19kmp__failure__table(pattern) {
+  const m = pattern.end - pattern.start | 0;
+  const table = $make_array_len_and_init(m, 0);
+  let k = 0;
+  let _tmp = 1;
+  while (true) {
+    const i = _tmp;
+    if (i < m) {
+      const c = pattern.str.charCodeAt(pattern.start + i | 0);
+      while (true) {
+        if (k > 0 && _M0IPC16uint166UInt16PB2Eq10not__equal(c, pattern.str.charCodeAt(pattern.start + k | 0))) {
+          const _tmp$2 = k - 1 | 0;
+          k = _tmp$2 >>> 0 < table.length ? table[_tmp$2] : $oob();
+          continue;
+        } else {
+          break;
+        }
+      }
+      if (_M0IPC16uint166UInt16PB2Eq5equal(c, pattern.str.charCodeAt(pattern.start + k | 0))) {
+        k = k + 1 | 0;
+      }
+      if (i >>> 0 < table.length) {
+        table[i] = k;
+      } else {
+        $oob();
+      }
+      _tmp = i + 1 | 0;
+      continue;
+    } else {
+      break;
+    }
+  }
+  return table;
+}
+function _M0FPB24find__pattern__kmp__from(target, pattern, start) {
+  const n = target.end - target.start | 0;
+  const m = pattern.end - pattern.start | 0;
+  const table = _M0FPB19kmp__failure__table(pattern);
+  let k = 0;
+  let _tmp = start;
+  while (true) {
+    const i = _tmp;
+    if (i < n) {
+      const c = target.str.charCodeAt(target.start + i | 0);
+      while (true) {
+        if (k > 0 && _M0IPC16uint166UInt16PB2Eq10not__equal(c, pattern.str.charCodeAt(pattern.start + k | 0))) {
+          const _tmp$2 = k - 1 | 0;
+          k = _tmp$2 >>> 0 < table.length ? table[_tmp$2] : $oob();
+          continue;
+        } else {
+          break;
+        }
+      }
+      if (_M0IPC16uint166UInt16PB2Eq5equal(c, pattern.str.charCodeAt(pattern.start + k | 0))) {
+        k = k + 1 | 0;
+      }
+      if (k === m) {
+        return (i - m | 0) + 1 | 0;
+      }
+      _tmp = i + 1 | 0;
+      continue;
+    } else {
+      break;
+    }
+  }
+  return undefined;
+}
+function _M0FPB36find__two__anchor__candidate__scalar(data, start, candidate_end, first, last_offset, last) {
+  let _tmp = start;
+  while (true) {
+    const pos = _tmp;
+    if (pos < candidate_end) {
+      if (_M0IPC16uint166UInt16PB2Eq5equal(data.charCodeAt(pos), first) && _M0IPC16uint166UInt16PB2Eq5equal(data.charCodeAt(pos + last_offset | 0), last)) {
+        return pos;
+      }
+      _tmp = pos + 1 | 0;
+      continue;
+    } else {
+      return -1;
+    }
+  }
+}
+function _M0FPB42find__two__anchor__candidate__from__string(data, start, candidate_end, first, last_offset, last) {
+  return _M0FPB36find__two__anchor__candidate__scalar(data, start, candidate_end, first, last_offset, last);
+}
+function _M0FPB21string__ranges__equal(left, left_start, right, right_start, length) {
+  let _tmp = 0;
+  while (true) {
+    const i = _tmp;
+    if (i < length) {
+      if (_M0IPC16uint166UInt16PB2Eq10not__equal(left.charCodeAt(left_start + i | 0), right.charCodeAt(right_start + i | 0))) {
+        return false;
+      }
+      _tmp = i + 1 | 0;
+      continue;
+    } else {
+      break;
+    }
+  }
+  return true;
+}
+function _M0FPB29two__anchor__should__fallback(failures, scanned) {
+  if (failures > 64) {
+    return true;
+  } else {
+    if (8 === 0) {
+      $panic();
+    }
+    return failures > (4 + (scanned / 8 | 0) | 0);
+  }
+}
+function _M0FPB22find__by__two__anchors(target, pattern) {
+  const target_len = target.end - target.start | 0;
+  const pattern_len = pattern.end - pattern.start | 0;
+  const target_start = _M0MPC16string10StringView13start__offset(target);
+  const pattern_start = _M0MPC16string10StringView13start__offset(pattern);
+  const last_offset = pattern_len - 1 | 0;
+  const candidate_end = ((target_start + target_len | 0) - pattern_len | 0) + 1 | 0;
+  const first = pattern.str.charCodeAt(pattern.start);
+  const last = pattern.str.charCodeAt(pattern.start + last_offset | 0);
+  const middle_len = last_offset - 1 | 0;
+  let _tmp = target_start;
+  let _tmp$2 = 0;
+  while (true) {
+    const pos = _tmp;
+    const failures = _tmp$2;
+    if (pos < candidate_end) {
+      const found = _M0FPB42find__two__anchor__candidate__from__string(_M0MPC16string10StringView4data(target), pos, candidate_end, first, last_offset, last);
+      if (found < 0) {
+        return undefined;
+      }
+      if (_M0FPB21string__ranges__equal(_M0MPC16string10StringView4data(target), found + 1 | 0, _M0MPC16string10StringView4data(pattern), pattern_start + 1 | 0, middle_len)) {
+        return found - target_start | 0;
+      }
+      const failures$2 = failures + 1 | 0;
+      const scanned = found - target_start | 0;
+      if (_M0FPB29two__anchor__should__fallback(failures$2, scanned)) {
+        return _M0FPB24find__pattern__kmp__from(target, pattern, scanned + 1 | 0);
+      }
+      _tmp = found + 1 | 0;
+      _tmp$2 = failures$2;
+      continue;
+    } else {
+      return undefined;
+    }
+  }
+}
+function _M0FPB24find__code__unit__scalar(data, start, end, code) {
+  let _tmp = start;
+  while (true) {
+    const pos = _tmp;
+    if (pos < end) {
+      if (_M0IPC16uint166UInt16PB2Eq5equal(data.charCodeAt(pos), code)) {
+        return pos;
+      }
+      _tmp = pos + 1 | 0;
+      continue;
+    } else {
+      return -1;
+    }
+  }
+}
+function _M0FPB30find__code__unit__from__string(data, start, end, code) {
+  return _M0FPB24find__code__unit__scalar(data, start, end, code);
+}
+function _M0FPB28find__code__unit__from__view(target, start, end, code) {
+  const target_start = _M0MPC16string10StringView13start__offset(target);
+  const found = _M0FPB30find__code__unit__from__string(_M0MPC16string10StringView4data(target), target_start + start | 0, target_start + end | 0, code);
+  return found < 0 ? -1 : found - target_start | 0;
+}
+function _M0MPC16string10StringView4find(self, str) {
+  const pattern_len = str.end - str.start | 0;
+  switch (pattern_len) {
+    case 0: {
+      return _M0MPC16string10StringView4findN6constrS9865;
+    }
+    case 1: {
+      const found = _M0FPB28find__code__unit__from__view(self, 0, self.end - self.start | 0, str.str.charCodeAt(str.start));
+      return found < 0 ? undefined : found;
+    }
+    default: {
+      return pattern_len > (self.end - self.start | 0) ? undefined : _M0FPB22find__by__two__anchors(self, str);
+    }
+  }
+}
+function _M0MPC16string6String4find(self, str) {
+  return _M0MPC16string10StringView4find(new _M0TPC16string10StringView(self, 0, self.length), str);
+}
 function _M0IPC16string6StringPB4Show10to__string(self) {
   return self;
 }
 function _M0MPC16string6String6repeat(self, n) {
   if (n < 0) {
-    return _M0FPC15abort5abortGsE("negative repeat count");
+    return _M0FPC15abort5abortGRPC16string10StringViewE("negative repeat count");
   } else {
     if (n === 0) {
       return "";
@@ -689,7 +989,7 @@ function _M0MPC16string6String6repeat(self, n) {
           }
           return _M0MPB13StringBuilder10to__string(buf);
         } else {
-          return _M0FPC15abort5abortGsE("repeat result too large");
+          return _M0FPC15abort5abortGRPC16string10StringViewE("repeat result too large");
         }
       }
     }
@@ -727,8 +1027,32 @@ function _M0MPC16string10StringView13strip__prefix(self, prefix) {
   const prefix_len = prefix.end - prefix.start | 0;
   return (self.end - self.start | 0) >= prefix_len && _M0IPC16string10StringViewPB2Eq5equal(_M0MPC16string10StringView12view_2einner(self, 0, prefix_len), prefix) ? _M0MPC16string10StringView12view_2einner(self, prefix_len, undefined) : undefined;
 }
-function _M0MPC15array5Array4pushGsE(self, value) {
+function _M0MPC15array5Array13Array_2einnerGRPC16string10StringViewE(capacity) {
+  return [];
+}
+function _M0MPC15array5Array13Array_2einnerGcE(capacity) {
+  return [];
+}
+function _M0MPC15array5Array4pushGRPC16string10StringViewE(self, value) {
   _M0MPB7JSArray4push(self, value);
+}
+function _M0MPC15array5Array4pushGcE(self, value) {
+  _M0MPB7JSArray4push(self, value);
+}
+function _M0MPB4Iter4foldGcRPB5ArrayGcEE(self, init, f) {
+  let acc = init;
+  while (true) {
+    const _bind = _M0MPB4Iter4nextGcE(self);
+    if (_bind === -1) {
+      break;
+    } else {
+      const _Some = _bind;
+      const _x = _Some;
+      acc = f(acc, _x);
+      continue;
+    }
+  }
+  return acc;
 }
 function _M0FPB36string__contains__code__unit__scalar(str, start, end, code) {
   let _tmp = start;
@@ -751,6 +1075,24 @@ function _M0FPB28string__contains__code__unit(str, start, end, code) {
 }
 function _M0MPC16string10StringView20contains__code__unit(self, code) {
   return _M0FPB28string__contains__code__unit(self.str, self.start, self.end, code);
+}
+function _M0MPC16string10StringView8contains(self, str) {
+  const _bind = str.end - str.start | 0;
+  switch (_bind) {
+    case 0: {
+      return true;
+    }
+    case 1: {
+      return _M0MPC16string10StringView20contains__code__unit(self, str.str.charCodeAt(str.start));
+    }
+    default: {
+      const _bind$2 = _M0MPC16string10StringView4find(self, str);
+      return !(_bind$2 === undefined);
+    }
+  }
+}
+function _M0MPC16string6String8contains(self, str) {
+  return _M0MPC16string10StringView8contains(new _M0TPC16string10StringView(self, 0, self.length), str);
 }
 function _M0MPC14char4Char8to__uint(self) {
   return self;
@@ -992,9 +1334,48 @@ function _M0MPC16string6String4trim(self, chars$46$opt) {
   }
   return _M0MPC16string6String12trim_2einner(self, chars);
 }
+function _M0MPC16string10StringView9is__empty(self) {
+  return (self.end - self.start | 0) === 0;
+}
+function _M0MPC16string6String9is__empty(self) {
+  return self === "";
+}
+function _M0MPC16string6String4iter(self) {
+  const len = self.length;
+  const index = new _M0TPB8MutLocalGiE(0);
+  return _M0MPB4Iter3newGcE(() => {
+    if (index.val < len) {
+      const c1 = self.charCodeAt(index.val);
+      if (_M0MPC16uint166UInt1622is__leading__surrogate(c1) && (index.val + 1 | 0) < len) {
+        const c2 = self.charCodeAt(index.val + 1 | 0);
+        if (_M0MPC16uint166UInt1623is__trailing__surrogate(c2)) {
+          const c = _M0FPB32code__point__of__surrogate__pair(c1, c2);
+          index.val = index.val + 2 | 0;
+          return c;
+        }
+      }
+      index.val = index.val + 1 | 0;
+      return _M0MPC16uint166UInt1616unsafe__to__char(c1);
+    } else {
+      return -1;
+    }
+  }, undefined);
+}
+function _M0MPB4Iter3mapGcRPC16string10StringViewE(self, f) {
+  return new _M0TPB4IterGRPC16string10StringViewE(() => {
+    const _bind = _M0MPB4Iter4nextGcE(self);
+    if (_bind === -1) {
+      return undefined;
+    } else {
+      const _Some = _bind;
+      const _x = _Some;
+      return f(_x);
+    }
+  }, self.size_hint);
+}
 function _M0MPB4Iter3mapGssE(self, f) {
   return new _M0TPB4IterGsE(() => {
-    const _bind = _M0MPB4Iter4nextGsE(self);
+    const _bind = _M0MPB4Iter4nextGRPC16string10StringViewE(self);
     if (_bind === undefined) {
       return undefined;
     } else {
@@ -1004,19 +1385,158 @@ function _M0MPB4Iter3mapGssE(self, f) {
     }
   }, self.size_hint);
 }
+function _M0IPC14char4CharPB4Show10to__string(self) {
+  return String.fromCodePoint(self);
+}
+function _M0MPC16string10StringView5split(self, sep) {
+  const sep_len = sep.end - sep.start | 0;
+  if (sep_len === 0) {
+    return _M0MPB4Iter3mapGcRPC16string10StringViewE(_M0MPC16string10StringView4iter(self), (c) => _M0MPC16string6String12view_2einner(_M0IPC14char4CharPB4Show10to__string(c), 0, undefined));
+  }
+  const remaining = new _M0TPB8MutLocalGORPC16string10StringViewE(self);
+  return _M0MPB4Iter3newGRPC16string10StringViewE(() => {
+    const _bind = remaining.val;
+    if (_bind === undefined) {
+      return undefined;
+    } else {
+      const _Some = _bind;
+      const _view = _Some;
+      const _bind$2 = _M0MPC16string10StringView4find(_view, sep);
+      if (_bind$2 === undefined) {
+        remaining.val = undefined;
+        return _view;
+      } else {
+        const _Some$2 = _bind$2;
+        const _end = _Some$2;
+        remaining.val = _M0MPC16string10StringView12view_2einner(_view, _end + sep_len | 0, undefined);
+        return _M0MPC16string10StringView12view_2einner(_view, 0, _end);
+      }
+    }
+  }, undefined);
+}
+function _M0MPC16string6String5split(self, sep) {
+  return _M0MPC16string10StringView5split(new _M0TPC16string10StringView(self, 0, self.length), sep);
+}
+function _M0MPB4Iter9to__arrayGRPC16string10StringViewE(self) {
+  const _bind = self.size_hint;
+  let result;
+  if (_bind === undefined) {
+    result = [];
+  } else {
+    const _Some = _bind;
+    const _n = _Some;
+    result = _M0MPC15array5Array13Array_2einnerGRPC16string10StringViewE(_n);
+  }
+  while (true) {
+    const _bind$2 = _M0MPB4Iter4nextGRPC16string10StringViewE(self);
+    if (_bind$2 === undefined) {
+      break;
+    } else {
+      const _Some = _bind$2;
+      const _x = _Some;
+      _M0MPC15array5Array4pushGRPC16string10StringViewE(result, _x);
+      continue;
+    }
+  }
+  return result;
+}
+function _M0MPC16string6String12replace__all(self, old, new_) {
+  const len = self.length;
+  const buf = _M0MPB13StringBuilder21StringBuilder_2einner(len);
+  const old_len = old.end - old.start | 0;
+  const new$2 = _M0MPC16string10StringView9to__owned(new_);
+  if (old_len === 0) {
+    _M0IPB13StringBuilderPB6Logger13write__string(buf, new$2);
+    const _bind = self.length;
+    let _tmp = 0;
+    while (true) {
+      const _string_index = _tmp;
+      if (_string_index < _bind) {
+        let _decoded_next_string_index;
+        let _decoded_char;
+        _L: {
+          const _bind$2 = self.charCodeAt(_string_index);
+          if (_bind$2 >= 55296 && _bind$2 <= 56319 && (_string_index + 1 | 0) < _bind) {
+            const _bind$3 = self.charCodeAt(_string_index + 1 | 0);
+            if (_bind$3 >= 56320 && _bind$3 <= 57343) {
+              _decoded_next_string_index = _string_index + 2 | 0;
+              _decoded_char = _M0MPC13int3Int16unsafe__to__char((((Math.imul(_bind$2 - 55296 | 0, 1024) | 0) + _bind$3 | 0) - 56320 | 0) + 65536 | 0);
+              break _L;
+            } else {
+              _decoded_next_string_index = _string_index + 1 | 0;
+              _decoded_char = _M0MPC13int3Int16unsafe__to__char(_bind$2);
+              break _L;
+            }
+          } else {
+            _decoded_next_string_index = _string_index + 1 | 0;
+            _decoded_char = _M0MPC13int3Int16unsafe__to__char(_bind$2);
+            break _L;
+          }
+        }
+        _M0IPB13StringBuilderPB6Logger11write__char(buf, _decoded_char);
+        _M0IPB13StringBuilderPB6Logger13write__string(buf, new$2);
+        _tmp = _decoded_next_string_index;
+        continue;
+      } else {
+        break;
+      }
+    }
+    return _M0MPB13StringBuilder10to__string(buf);
+  } else {
+    const first_end = _M0MPC16string6String4find(self, old);
+    if (first_end === undefined) {
+      return self;
+    } else {
+      const _Some = first_end;
+      const _end = _Some;
+      let _tmp = new _M0TPC16string10StringView(self, 0, self.length);
+      let _tmp$2 = _end;
+      while (true) {
+        const view = _tmp;
+        const end = _tmp$2;
+        const seg = _M0MPC16string10StringView12view_2einner(view, 0, end);
+        _M0IP016_24default__implPB6Logger16write__substringGRPB13StringBuilderE(buf, _M0MPC16string10StringView4data(seg), _M0MPC16string10StringView13start__offset(seg), seg.end - seg.start | 0);
+        _M0IPB13StringBuilderPB6Logger13write__string(buf, new$2);
+        if ((end + old_len | 0) <= len) {
+          const next_view = _M0MPC16string10StringView12view_2einner(view, end + old_len | 0, undefined);
+          const _bind = _M0MPC16string10StringView4find(next_view, old);
+          if (_bind === undefined) {
+            _M0IP016_24default__implPB6Logger16write__substringGRPB13StringBuilderE(buf, _M0MPC16string10StringView4data(next_view), _M0MPC16string10StringView13start__offset(next_view), next_view.end - next_view.start | 0);
+            break;
+          } else {
+            const _Some$2 = _bind;
+            const _next_end = _Some$2;
+            _tmp = next_view;
+            _tmp$2 = _next_end;
+            continue;
+          }
+        } else {
+          break;
+        }
+      }
+      return _M0MPB13StringBuilder10to__string(buf);
+    }
+  }
+}
 function _M0IPC16string6StringPB12ToStringView16to__string__view(self) {
   return new _M0TPC16string10StringView(self, 0, self.length);
 }
 function _M0IPC16string10StringViewPB12ToStringView16to__string__view(self) {
   return self;
 }
+function _M0MPC16string6String9to__array(self) {
+  return _M0MPB4Iter4foldGcRPB5ArrayGcEE(_M0MPC16string6String4iter(self), _M0MPC15array5Array13Array_2einnerGcE(self.length), (rv, c) => {
+    _M0MPC15array5Array4pushGcE(rv, c);
+    return rv;
+  });
+}
 function _M0IPC14bool4BoolPB4Show10to__string(self) {
   return self ? "true" : "false";
 }
-function _M0MPC15array9ArrayView4iterGsE(self) {
+function _M0MPC15array9ArrayView4iterGRPC16string10StringViewE(self) {
   const i = new _M0TPB8MutLocalGiE(0);
   const len = self.end - self.start | 0;
-  return _M0MPB4Iter3newGsE(() => {
+  return _M0MPB4Iter3newGRPC16string10StringViewE(() => {
     if (i.val < len) {
       const elem = self.buf[self.start + i.val | 0];
       i.val = i.val + 1 | 0;
@@ -1026,8 +1546,8 @@ function _M0MPC15array9ArrayView4iterGsE(self) {
     }
   }, len);
 }
-function _M0MPC15array5Array4iterGsE(self) {
-  return _M0MPC15array9ArrayView4iterGsE(new _M0TPB9ArrayViewGsE(self, 0, self.length));
+function _M0MPC15array5Array4iterGRPC16string10StringViewE(self) {
+  return _M0MPC15array9ArrayView4iterGRPC16string10StringViewE(new _M0TPB9ArrayViewGRPC16string10StringViewE(self, 0, self.length));
 }
 function _M0MPC15array9ArrayView4joinGsE(self, separator) {
   if ((self.end - self.start | 0) === 0) {
@@ -1280,6 +1800,37 @@ function _M0MPC15array5Array3mapGssE(self, f) {
 }
 function _M0MPB4Iter10size__hintGsE(self) {
   return self.size_hint;
+}
+function _M0MPB4Iter3anyGRPC16string10StringViewE(self, f) {
+  while (true) {
+    const _bind = _M0MPB4Iter4nextGRPC16string10StringViewE(self);
+    if (_bind === undefined) {
+      return false;
+    } else {
+      const _Some = _bind;
+      const _x = _Some;
+      if (f(_x)) {
+        return true;
+      }
+      continue;
+    }
+  }
+}
+function _M0MPB4Iter3allGcE(self, f) {
+  while (true) {
+    const _bind = _M0MPB4Iter4nextGcE(self);
+    if (_bind === -1) {
+      return true;
+    } else {
+      const _Some = _bind;
+      const _x = _Some;
+      if (f(_x)) {
+      } else {
+        return false;
+      }
+      continue;
+    }
+  }
 }
 function _M0MPB4Iter4iterGsE(self) {
   return self;
@@ -1567,6 +2118,10 @@ function _M0MPC15array5Array2atGsE(self, index) {
   const len = self.length;
   return index >= 0 && index < len ? self[index] : $panic();
 }
+function _M0MPC15array5Array2atGcE(self, index) {
+  const len = self.length;
+  return index >= 0 && index < len ? self[index] : $panic();
+}
 function _M0MPC15array5Array2atGiE(self, index) {
   const len = self.length;
   return index >= 0 && index < len ? self[index] : $panic();
@@ -1619,7 +2174,7 @@ function _M0MPC15array5Array6filterGsE(self, f) {
     if (_ < _bind) {
       const v = self[_];
       if (f(v)) {
-        _M0MPC15array5Array4pushGsE(arr, v);
+        _M0MPC15array5Array4pushGRPC16string10StringViewE(arr, v);
       }
       _tmp = _ + 1 | 0;
       continue;
@@ -1638,13 +2193,13 @@ function _M0MPC15array5Array10push__iterGsE(self, iter) {
     _M0MPC15array5Array17reserve__capacityGsE(self, self.length + _n | 0);
   }
   while (true) {
-    const _bind$2 = _M0MPB4Iter4nextGsE(iter);
+    const _bind$2 = _M0MPB4Iter4nextGRPC16string10StringViewE(iter);
     if (_bind$2 === undefined) {
       return;
     } else {
       const _Some = _bind$2;
       const _x = _Some;
-      _M0MPC15array5Array4pushGsE(self, _x);
+      _M0MPC15array5Array4pushGRPC16string10StringViewE(self, _x);
       continue;
     }
   }
@@ -1660,6 +2215,9 @@ function _M0IPC15float5FloatPB4Show10to__string(self) {
 }
 function _M0MPC15debug4Repr4ReprGRP211localreview5cnnum11NumberErrorE(value) {
   return _M0IP211localreview5cnnum11NumberErrorPC15debug5Debug8to__repr(value);
+}
+function _M0MPC15debug4Repr4ReprGRPC15error5ErrorE(value) {
+  return _M0IPC15error5ErrorPC15debug5Debug8to__repr(value);
 }
 function _M0MPC15debug4Repr8children(self) {
   let value;
@@ -1893,9 +2451,9 @@ function _M0FPC15debug15surround__lines(start, finish, lines) {
       const _last = lines[lines.length - 1 | 0];
       const _x = new _M0TPB9ArrayViewGsE(lines, 1, lines.length - 1 | 0);
       const _self = [];
-      _M0MPC15array5Array4pushGsE(_self, `${start}${_first}`);
-      _M0MPC15array5Array10push__iterGsE(_self, _M0MPC15array9ArrayView4iterGsE(_x));
-      _M0MPC15array5Array4pushGsE(_self, `${_last}${finish}`);
+      _M0MPC15array5Array4pushGRPC16string10StringViewE(_self, `${start}${_first}`);
+      _M0MPC15array5Array10push__iterGsE(_self, _M0MPC15array9ArrayView4iterGRPC16string10StringViewE(_x));
+      _M0MPC15array5Array4pushGRPC16string10StringViewE(_self, `${_last}${finish}`);
       return _self;
     }
   }
@@ -1933,7 +2491,7 @@ function _M0FPC15debug14compact__lines(lines) {
             const m = lines[1 + _ | 0];
             const t = _M0MPC16string6String4trim(m, undefined);
             if (_M0IP016_24default__implPB2Eq10not__equalGRPC16string10StringViewE(t, new _M0TPC16string10StringView(_M0FPC15debug14compact__linesN7_2abindS1134, 0, _M0FPC15debug14compact__linesN7_2abindS1134.length))) {
-              _M0MPC15array5Array4pushGsE(parts, t);
+              _M0MPC15array5Array4pushGRPC16string10StringViewE(parts, t);
             }
             _tmp = _ + 1 | 0;
             continue;
@@ -1980,7 +2538,7 @@ function _M0FPC15debug14compact__lines(lines) {
               const m = lines[1 + _ | 0];
               const t = _M0MPC16string6String4trim(m, undefined);
               if (_M0IP016_24default__implPB2Eq10not__equalGRPC16string10StringViewE(t, new _M0TPC16string10StringView(_M0FPC15debug14compact__linesN7_2abindS1152, 0, _M0FPC15debug14compact__linesN7_2abindS1152.length))) {
-                _M0MPC15array5Array4pushGsE(parts, t);
+                _M0MPC15array5Array4pushGRPC16string10StringViewE(parts, t);
               }
               _tmp = _ + 1 | 0;
               continue;
@@ -2010,14 +2568,14 @@ function _M0FPC15debug14compact__lines(lines) {
             const _ = _tmp;
             if (_ < _bind) {
               const m = lines[1 + _ | 0];
-              _M0MPC15array5Array4pushGsE(parts, _M0MPC16string6String4trim(m, undefined));
+              _M0MPC15array5Array4pushGRPC16string10StringViewE(parts, _M0MPC16string6String4trim(m, undefined));
               _tmp = _ + 1 | 0;
               continue;
             } else {
               break;
             }
           }
-          _M0MPC15array5Array4pushGsE(parts, _M0MPC16string6String4trim(_last, undefined));
+          _M0MPC15array5Array4pushGRPC16string10StringViewE(parts, _M0MPC16string6String4trim(_last, undefined));
           return [_M0MPC15array5Array4joinGRPC16string10StringViewE(parts, new _M0TPC16string10StringView(_M0FPC15debug14compact__linesN7_2abindS1166, 0, _M0FPC15debug14compact__linesN7_2abindS1166.length))];
         }
       }
@@ -2046,9 +2604,9 @@ function _M0FPC15debug19bracket__seq__lines(open, close, indent_by, contents) {
           _M0MPC15array5Array3setGsE(lines, last_i, `${_M0MPC15array5Array2atGsE(lines, last_i)},`);
         }
         const _self = [];
-        _M0MPC15array5Array4pushGsE(_self, open);
-        _M0MPC15array5Array10push__iterGsE(_self, _M0MPC15array5Array4iterGsE(lines));
-        _M0MPC15array5Array4pushGsE(_self, close);
+        _M0MPC15array5Array4pushGRPC16string10StringViewE(_self, open);
+        _M0MPC15array5Array10push__iterGsE(_self, _M0MPC15array5Array4iterGRPC16string10StringViewE(lines));
+        _M0MPC15array5Array4pushGRPC16string10StringViewE(_self, close);
         return _self;
       } else {
         const inner = _M0FPC15debug14compact__lines(_item);
@@ -2073,9 +2631,9 @@ function _M0FPC15debug19bracket__seq__lines(open, close, indent_by, contents) {
             }
           } else {
             const _self = [];
-            _M0MPC15array5Array4pushGsE(_self, open);
-            _M0MPC15array5Array10push__iterGsE(_self, _M0MPC15array5Array4iterGsE(_M0FPC15debug14indent__spaces(indent_by, new _M0TPC15debug13ContentParens(0, _item)).lines));
-            _M0MPC15array5Array4pushGsE(_self, close);
+            _M0MPC15array5Array4pushGRPC16string10StringViewE(_self, open);
+            _M0MPC15array5Array10push__iterGsE(_self, _M0MPC15array5Array4iterGRPC16string10StringViewE(_M0FPC15debug14indent__spaces(indent_by, new _M0TPC15debug13ContentParens(0, _item)).lines));
+            _M0MPC15array5Array4pushGRPC16string10StringViewE(_self, close);
             return _self;
           }
         }
@@ -2093,26 +2651,26 @@ function _M0FPC15debug19bracket__seq__lines(open, close, indent_by, contents) {
           } else {
             if (item_lines.length === 1) {
               const _x = item_lines[0];
-              _M0MPC15array5Array4pushGsE(out, `${_M0MPC16string6String6repeat(" ", indent_by)}${_x},`);
+              _M0MPC15array5Array4pushGRPC16string10StringViewE(out, `${_M0MPC16string6String6repeat(" ", indent_by)}${_x},`);
             } else {
               const _first = item_lines[0];
               const _last = item_lines[item_lines.length - 1 | 0];
               const _x_end = item_lines.length - 1 | 0;
-              _M0MPC15array5Array4pushGsE(out, `${_M0MPC16string6String6repeat(" ", indent_by)}${_first}`);
+              _M0MPC15array5Array4pushGRPC16string10StringViewE(out, `${_M0MPC16string6String6repeat(" ", indent_by)}${_first}`);
               const _bind$2 = _x_end - 1 | 0;
               let _tmp$2 = 0;
               while (true) {
                 const _$2 = _tmp$2;
                 if (_$2 < _bind$2) {
                   const mid = item_lines[1 + _$2 | 0];
-                  _M0MPC15array5Array4pushGsE(out, `${_M0MPC16string6String6repeat(" ", indent_by)}${mid}`);
+                  _M0MPC15array5Array4pushGRPC16string10StringViewE(out, `${_M0MPC16string6String6repeat(" ", indent_by)}${mid}`);
                   _tmp$2 = _$2 + 1 | 0;
                   continue;
                 } else {
                   break;
                 }
               }
-              _M0MPC15array5Array4pushGsE(out, `${_M0MPC16string6String6repeat(" ", indent_by)}${_last},`);
+              _M0MPC15array5Array4pushGRPC16string10StringViewE(out, `${_M0MPC16string6String6repeat(" ", indent_by)}${_last},`);
             }
           }
           _tmp = _ + 1 | 0;
@@ -2121,7 +2679,7 @@ function _M0FPC15debug19bracket__seq__lines(open, close, indent_by, contents) {
           break;
         }
       }
-      _M0MPC15array5Array4pushGsE(out, close);
+      _M0MPC15array5Array4pushGRPC16string10StringViewE(out, close);
       return out;
     }
   }
@@ -2162,9 +2720,9 @@ function _M0FPC15debug17comma__seq__lines(begin, end, contents) {
               }
             }
             const _self = [];
-            _M0MPC15array5Array10push__iterGsE(_self, _M0MPC15array5Array4iterGsE(_M0FPC15debug15surround__lines(begin, ",", _first)));
-            _M0MPC15array5Array10push__iterGsE(_self, _M0MPC15array5Array4iterGsE(middle_lines));
-            _M0MPC15array5Array10push__iterGsE(_self, _M0MPC15array5Array4iterGsE(_M0FPC15debug15surround__lines(space, end, _last)));
+            _M0MPC15array5Array10push__iterGsE(_self, _M0MPC15array5Array4iterGRPC16string10StringViewE(_M0FPC15debug15surround__lines(begin, ",", _first)));
+            _M0MPC15array5Array10push__iterGsE(_self, _M0MPC15array5Array4iterGRPC16string10StringViewE(middle_lines));
+            _M0MPC15array5Array10push__iterGsE(_self, _M0MPC15array5Array4iterGRPC16string10StringViewE(_M0FPC15debug15surround__lines(space, end, _last)));
             lines = _self;
           }
         }
@@ -2186,10 +2744,10 @@ function _M0FPC15debug17comma__seq__lines(begin, end, contents) {
                 const _last_line = item_lines[item_lines.length - 1 | 0];
                 const _x = new _M0TPB9ArrayViewGsE(item_lines, 0, item_lines.length - 1 | 0);
                 const _self = [];
-                _M0MPC15array5Array4pushGsE(_self, begin);
-                _M0MPC15array5Array10push__iterGsE(_self, _M0MPB4Iter4iterGsE(_M0MPB4Iter3mapGssE(_M0MPC15array9ArrayView4iterGsE(_x), (line) => `${_M0MPC16string6String6repeat(" ", 2)}${line}`)));
-                _M0MPC15array5Array4pushGsE(_self, `${_M0MPC16string6String6repeat(" ", 2)}${_last_line},`);
-                _M0MPC15array5Array4pushGsE(_self, end);
+                _M0MPC15array5Array4pushGRPC16string10StringViewE(_self, begin);
+                _M0MPC15array5Array10push__iterGsE(_self, _M0MPB4Iter4iterGsE(_M0MPB4Iter3mapGssE(_M0MPC15array9ArrayView4iterGRPC16string10StringViewE(_x), (line) => `${_M0MPC16string6String6repeat(" ", 2)}${line}`)));
+                _M0MPC15array5Array4pushGRPC16string10StringViewE(_self, `${_M0MPC16string6String6repeat(" ", 2)}${_last_line},`);
+                _M0MPC15array5Array4pushGRPC16string10StringViewE(_self, end);
                 return _self;
               }
             }
@@ -2206,26 +2764,26 @@ function _M0FPC15debug17comma__seq__lines(begin, end, contents) {
                 } else {
                   if (item_lines.length === 1) {
                     const _x = item_lines[0];
-                    _M0MPC15array5Array4pushGsE(out, `${_M0MPC16string6String6repeat(" ", 2)}${_x},`);
+                    _M0MPC15array5Array4pushGRPC16string10StringViewE(out, `${_M0MPC16string6String6repeat(" ", 2)}${_x},`);
                   } else {
                     const _first = item_lines[0];
                     const _last = item_lines[item_lines.length - 1 | 0];
                     const _x_end = item_lines.length - 1 | 0;
-                    _M0MPC15array5Array4pushGsE(out, `${_M0MPC16string6String6repeat(" ", 2)}${_first}`);
+                    _M0MPC15array5Array4pushGRPC16string10StringViewE(out, `${_M0MPC16string6String6repeat(" ", 2)}${_first}`);
                     const _bind$2 = _x_end - 1 | 0;
                     let _tmp$2 = 0;
                     while (true) {
                       const _$2 = _tmp$2;
                       if (_$2 < _bind$2) {
                         const mid = item_lines[1 + _$2 | 0];
-                        _M0MPC15array5Array4pushGsE(out, `${_M0MPC16string6String6repeat(" ", 2)}${mid}`);
+                        _M0MPC15array5Array4pushGRPC16string10StringViewE(out, `${_M0MPC16string6String6repeat(" ", 2)}${mid}`);
                         _tmp$2 = _$2 + 1 | 0;
                         continue;
                       } else {
                         break;
                       }
                     }
-                    _M0MPC15array5Array4pushGsE(out, `${_M0MPC16string6String6repeat(" ", 2)}${_last},`);
+                    _M0MPC15array5Array4pushGRPC16string10StringViewE(out, `${_M0MPC16string6String6repeat(" ", 2)}${_last},`);
                   }
                 }
                 _tmp = _ + 1 | 0;
@@ -2234,7 +2792,7 @@ function _M0FPC15debug17comma__seq__lines(begin, end, contents) {
                 break;
               }
             }
-            _M0MPC15array5Array4pushGsE(out, end);
+            _M0MPC15array5Array4pushGRPC16string10StringViewE(out, end);
             return out;
           }
         }
@@ -2519,8 +3077,8 @@ function _M0MPC15debug4Repr13pretty__print(self, children) {
             const head = `${_M0FPC15debug14print__content(_M0FPC15debug8surround("", ": ", k))}${_first}`;
             const _tmp$2 = (1 + k.size | 0) + v.size | 0;
             const _self = [];
-            _M0MPC15array5Array4pushGsE(_self, head);
-            _M0MPC15array5Array10push__iterGsE(_self, _M0MPC15array9ArrayView4iterGsE(_x$6));
+            _M0MPC15array5Array4pushGRPC16string10StringViewE(_self, head);
+            _M0MPC15array5Array10push__iterGsE(_self, _M0MPC15array9ArrayView4iterGRPC16string10StringViewE(_x$6));
             return _M0FPC15debug10no__parens(_M0FPC15debug15content__parens(_tmp$2, _self));
           }
         }
@@ -2545,8 +3103,8 @@ function _M0MPC15debug4Repr13pretty__print(self, children) {
             const _x$6 = new _M0TPB9ArrayViewGsE(_bind, 1, _bind.length);
             const _tmp$2 = 1 + _val.size | 0;
             const _self = [];
-            _M0MPC15array5Array4pushGsE(_self, `${_name$3}=${_first}`);
-            _M0MPC15array5Array10push__iterGsE(_self, _M0MPC15array9ArrayView4iterGsE(_x$6));
+            _M0MPC15array5Array4pushGRPC16string10StringViewE(_self, `${_name$3}=${_first}`);
+            _M0MPC15array5Array10push__iterGsE(_self, _M0MPC15array9ArrayView4iterGRPC16string10StringViewE(_x$6));
             return _M0FPC15debug10no__parens(_M0FPC15debug15content__parens(_tmp$2, _self));
           }
         }
@@ -2573,8 +3131,8 @@ function _M0MPC15debug4Repr13pretty__print(self, children) {
             const _x$6 = new _M0TPB9ArrayViewGsE(_bind, 1, _bind.length);
             const _tmp$2 = 1 + v.size | 0;
             const _self = [];
-            _M0MPC15array5Array4pushGsE(_self, `${label}: ${_first}`);
-            _M0MPC15array5Array10push__iterGsE(_self, _M0MPC15array9ArrayView4iterGsE(_x$6));
+            _M0MPC15array5Array4pushGRPC16string10StringViewE(_self, `${label}: ${_first}`);
+            _M0MPC15array5Array10push__iterGsE(_self, _M0MPC15array9ArrayView4iterGRPC16string10StringViewE(_x$6));
             return _M0FPC15debug10no__parens(_M0FPC15debug15content__parens(_tmp$2, _self));
           }
         }
@@ -2603,15 +3161,33 @@ function _M0IPC15debug4ReprPB4Show6output(self, logger) {
 function _M0IPC16string6StringPC15debug5Debug8to__repr(self) {
   return _M0MPC15debug4Repr6string(self);
 }
-function _M0IP211localreview5cnnum11NumberErrorPC15debug5Debug8to__repr(_x_65) {
-  let _arg_66;
+function _M0IPB7FailurePC15debug5Debug8to__reprGRPB7FailureE(self) {
+  const _Failure = self;
+  const _msg = _Failure._0;
+  return _M0MPC15debug4Repr4ctor("Failure", [{ _0: undefined, _1: _M0MPC15debug4Repr6string(_msg) }]);
+}
+function _M0IPC15error5ErrorPC15debug5Debug8to__repr(self) {
+  return _M0FP15Error8to__repr(self);
+}
+function _M0IP211localreview5cnnum11NumberErrorPC15debug5Debug8to__repr(_x_116) {
+  let _arg_117;
   _L: {
-    const _Invalid = _x_65;
-    const _$42$arg_66 = _Invalid._0;
-    _arg_66 = _$42$arg_66;
+    const _Invalid = _x_116;
+    const _$42$arg_117 = _Invalid._0;
+    _arg_117 = _$42$arg_117;
     break _L;
   }
-  return _M0MPC15debug4Repr4ctor("Invalid", [{ _0: undefined, _1: _M0IPC16string6StringPC15debug5Debug8to__repr(_arg_66) }]);
+  return _M0MPC15debug4Repr4ctor("Invalid", [{ _0: undefined, _1: _M0IPC16string6StringPC15debug5Debug8to__repr(_arg_117) }]);
+}
+function _M0IP211localreview5cnnum11NumberErrorPC15debug5Debug8to__reprGRP211localreview5cnnum11NumberErrorE(_x_116) {
+  let _arg_117;
+  _L: {
+    const _Invalid = _x_116;
+    const _$42$arg_117 = _Invalid._0;
+    _arg_117 = _$42$arg_117;
+    break _L;
+  }
+  return _M0MPC15debug4Repr4ctor("Invalid", [{ _0: undefined, _1: _M0IPC16string6StringPC15debug5Debug8to__repr(_arg_117) }]);
 }
 function _M0FP211localreview5cnnum6digits(financial) {
   return financial ? ["零", "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖"] : ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
@@ -2756,6 +3332,396 @@ function _M0FP211localreview5cnnum13format__money(cents) {
   }
   return new _M0DTPC16result6ResultGsRP211localreview5cnnum11NumberErrorE2Ok(out.val);
 }
+function _M0FP211localreview5cnnum17numeral__variants(source) {
+  const out = _M0MPB13StringBuilder21StringBuilder_2einner(0);
+  const _it = _M0MPC16string6String4iter(source);
+  while (true) {
+    let c;
+    _L: {
+      const _bind = _M0MPB4Iter4nextGcE(_it);
+      if (_bind === -1) {
+        break;
+      } else {
+        const _Some = _bind;
+        const _c = _Some;
+        c = _c;
+        break _L;
+      }
+    }
+    let _tmp;
+    switch (c) {
+      case 36000: {
+        _tmp = 36127;
+        break;
+      }
+      case 33836: {
+        _tmp = 19975;
+        break;
+      }
+      case 20740: {
+        _tmp = 20159;
+        break;
+      }
+      case 36019: {
+        _tmp = 36144;
+        break;
+      }
+      case 21443: {
+        _tmp = 21441;
+        break;
+      }
+      case 38520: {
+        _tmp = 38470;
+        break;
+      }
+      case 20841: {
+        _tmp = 20108;
+        break;
+      }
+      case 20004: {
+        _tmp = 20108;
+        break;
+      }
+      case 12295: {
+        _tmp = 38646;
+        break;
+      }
+      case 40670: {
+        _tmp = 28857;
+        break;
+      }
+      default: {
+        _tmp = c;
+      }
+    }
+    _M0IPB13StringBuilderPB6Logger11write__char(out, _tmp);
+    continue;
+  }
+  return _M0MPB13StringBuilder10to__string(out);
+}
+function _M0FP211localreview5cnnum9normalize(s) {
+  const out = new _M0TPB8MutLocalGsE("");
+  const _it = _M0MPC16string6String4iter(s);
+  while (true) {
+    let c;
+    _L: {
+      const _bind = _M0MPB4Iter4nextGcE(_it);
+      if (_bind === -1) {
+        break;
+      } else {
+        const _Some = _bind;
+        const _c = _Some;
+        c = _c;
+        break _L;
+      }
+    }
+    const _tmp = out.val;
+    let _tmp$2;
+    switch (c) {
+      case 22777: {
+        _tmp$2 = "一";
+        break;
+      }
+      case 36144: {
+        _tmp$2 = "二";
+        break;
+      }
+      case 21441: {
+        _tmp$2 = "三";
+        break;
+      }
+      case 32902: {
+        _tmp$2 = "四";
+        break;
+      }
+      case 20237: {
+        _tmp$2 = "五";
+        break;
+      }
+      case 38470: {
+        _tmp$2 = "六";
+        break;
+      }
+      case 26578: {
+        _tmp$2 = "七";
+        break;
+      }
+      case 25420: {
+        _tmp$2 = "八";
+        break;
+      }
+      case 29590: {
+        _tmp$2 = "九";
+        break;
+      }
+      case 25342: {
+        _tmp$2 = "十";
+        break;
+      }
+      case 20336: {
+        _tmp$2 = "百";
+        break;
+      }
+      case 20191: {
+        _tmp$2 = "千";
+        break;
+      }
+      default: {
+        _tmp$2 = _M0IPC14char4CharPB4Show10to__string(c);
+      }
+    }
+    out.val = `${_tmp}${_tmp$2}`;
+    continue;
+  }
+  return out.val;
+}
+function _M0FP211localreview5cnnum22parse__integer_2einner(text, variants) {
+  if (text === "" || text.length > 128) {
+    return new _M0DTPC16result6ResultGlRP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("invalid length"));
+  }
+  const s = _M0FP211localreview5cnnum9normalize(variants ? _M0FP211localreview5cnnum17numeral__variants(text) : text);
+  const _bind = "负";
+  const neg = _M0MPC16string6String11has__prefix(s, new _M0TPC16string10StringView(_bind, 0, _bind.length));
+  const body = neg ? _M0MPC16string10StringView9to__owned(_M0MPC16string6String11sub_2einner(s, 1, undefined)) : s;
+  const total = new _M0TPB8MutLocalGlE(0n);
+  const section = new _M0TPB8MutLocalGlE(0n);
+  const digit = new _M0TPB8MutLocalGlE(0n);
+  const previous_big = new _M0TPB8MutLocalGlE(10000000000000000n);
+  const _it = _M0MPC16string6String4iter(body);
+  while (true) {
+    let c;
+    _L: {
+      const _bind$2 = _M0MPB4Iter4nextGcE(_it);
+      if (_bind$2 === -1) {
+        break;
+      } else {
+        const _Some = _bind$2;
+        const _c = _Some;
+        c = _c;
+        break _L;
+      }
+    }
+    let d;
+    switch (c) {
+      case 38646: {
+        d = 0;
+        break;
+      }
+      case 19968: {
+        d = 1;
+        break;
+      }
+      case 20108: {
+        d = 2;
+        break;
+      }
+      case 19977: {
+        d = 3;
+        break;
+      }
+      case 22235: {
+        d = 4;
+        break;
+      }
+      case 20116: {
+        d = 5;
+        break;
+      }
+      case 20845: {
+        d = 6;
+        break;
+      }
+      case 19971: {
+        d = 7;
+        break;
+      }
+      case 20843: {
+        d = 8;
+        break;
+      }
+      case 20061: {
+        d = 9;
+        break;
+      }
+      default: {
+        d = -1;
+      }
+    }
+    if (d >= 0) {
+      digit.val = BigInt.asUintN(64, BigInt(d));
+      continue;
+    }
+    let unit;
+    switch (c) {
+      case 21313: {
+        unit = 10n;
+        break;
+      }
+      case 30334: {
+        unit = 100n;
+        break;
+      }
+      case 21315: {
+        unit = 1000n;
+        break;
+      }
+      case 19975: {
+        unit = 10000n;
+        break;
+      }
+      case 20159: {
+        unit = 100000000n;
+        break;
+      }
+      case 20806: {
+        unit = 1000000000000n;
+        break;
+      }
+      default: {
+        return new _M0DTPC16result6ResultGlRP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("unknown numeral"));
+      }
+    }
+    if (BigInt.asIntN(64, unit) < BigInt.asIntN(64, 10000n)) {
+      section.val = BigInt.asUintN(64, section.val + BigInt.asUintN(64, (BigInt.asUintN(64, digit.val) === BigInt.asUintN(64, 0n) ? 1n : digit.val) * unit));
+    } else {
+      if (BigInt.asIntN(64, unit) >= BigInt.asIntN(64, previous_big.val)) {
+        return new _M0DTPC16result6ResultGlRP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("invalid group order"));
+      }
+      previous_big.val = unit;
+      if (BigInt.asIntN(64, BigInt.asUintN(64, section.val + digit.val)) > BigInt.asIntN(64, 9999n)) {
+        return new _M0DTPC16result6ResultGlRP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("group overflow"));
+      }
+      total.val = BigInt.asUintN(64, total.val + BigInt.asUintN(64, BigInt.asUintN(64, section.val + digit.val) * unit));
+      section.val = 0n;
+    }
+    digit.val = 0n;
+    continue;
+  }
+  const value = BigInt.asUintN(64, BigInt.asUintN(64, BigInt.asUintN(64, total.val + section.val) + digit.val) * (neg ? 18446744073709551615n : 1n));
+  const _bind$2 = _M0FP211localreview5cnnum23format__integer_2einner(value, false);
+  let _tmp;
+  if (_bind$2.$tag === 1) {
+    const _ok = _bind$2;
+    _tmp = _ok._0;
+  } else {
+    return _bind$2;
+  }
+  const normal = _M0FP211localreview5cnnum9normalize(_tmp);
+  const _bind$3 = _M0FP211localreview5cnnum23format__integer_2einner(value, true);
+  let _tmp$2;
+  if (_bind$3.$tag === 1) {
+    const _ok = _bind$3;
+    _tmp$2 = _ok._0;
+  } else {
+    return _bind$3;
+  }
+  const finance = _M0FP211localreview5cnnum9normalize(_tmp$2);
+  if (_M0IP016_24default__implPB2Eq10not__equalGsE(s, normal) && _M0IP016_24default__implPB2Eq10not__equalGsE(s, finance)) {
+    return new _M0DTPC16result6ResultGlRP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("noncanonical or ambiguous numeral"));
+  }
+  return new _M0DTPC16result6ResultGlRP211localreview5cnnum11NumberErrorE2Ok(value);
+}
+function _M0FP211localreview5cnnum20parse__money_2einner(source, variants) {
+  if (source.length > 100) {
+    return new _M0DTPC16result6ResultGlRP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("amount text too long"));
+  }
+  let source$2;
+  if (variants) {
+    const _tmp = _M0FP211localreview5cnnum17numeral__variants(source);
+    const _bind = "圓";
+    const _tmp$2 = new _M0TPC16string10StringView(_bind, 0, _bind.length);
+    const _bind$2 = "元";
+    const _tmp$3 = _M0MPC16string6String12replace__all(_tmp, _tmp$2, new _M0TPC16string10StringView(_bind$2, 0, _bind$2.length));
+    const _bind$3 = "圆";
+    const _tmp$4 = new _M0TPC16string10StringView(_bind$3, 0, _bind$3.length);
+    const _bind$4 = "元";
+    const _tmp$5 = _M0MPC16string6String12replace__all(_tmp$3, _tmp$4, new _M0TPC16string10StringView(_bind$4, 0, _bind$4.length));
+    const _bind$5 = "正";
+    const _tmp$6 = new _M0TPC16string10StringView(_bind$5, 0, _bind$5.length);
+    const _bind$6 = "整";
+    source$2 = _M0MPC16string6String12replace__all(_tmp$5, _tmp$6, new _M0TPC16string10StringView(_bind$6, 0, _bind$6.length));
+  } else {
+    source$2 = source;
+  }
+  const _bind = "负";
+  const negative = _M0MPC16string6String11has__prefix(source$2, new _M0TPC16string10StringView(_bind, 0, _bind.length));
+  const s = negative ? _M0MPC16string10StringView9to__owned(_M0MPC16string6String11sub_2einner(source$2, 1, undefined)) : source$2;
+  const _bind$2 = "元";
+  const parts = _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPC16string6String5split(s, new _M0TPC16string10StringView(_bind$2, 0, _bind$2.length)));
+  if (parts.length !== 2) {
+    return new _M0DTPC16result6ResultGlRP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("expected yuan separator"));
+  }
+  const _bind$3 = _M0FP211localreview5cnnum22parse__integer_2einner(_M0MPC16string10StringView9to__owned(_M0MPC15array5Array2atGsE(parts, 0)), false);
+  let whole;
+  if (_bind$3.$tag === 1) {
+    const _ok = _bind$3;
+    whole = _ok._0;
+  } else {
+    return _bind$3;
+  }
+  if (BigInt.asIntN(64, whole) < BigInt.asIntN(64, 0n) || BigInt.asIntN(64, whole) > BigInt.asIntN(64, 99999999999999n)) {
+    return new _M0DTPC16result6ResultGlRP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("whole amount range"));
+  }
+  const tail = _M0MPC16string10StringView9to__owned(_M0MPC15array5Array2atGsE(parts, 1));
+  const fraction = new _M0TPB8MutLocalGiE(0);
+  if (_M0IP016_24default__implPB2Eq10not__equalGsE(tail, "整")) {
+    const cs = _M0MPC16string6String9to__array(tail);
+    const i = new _M0TPB8MutLocalGiE(cs.length > 0 && _M0MPC15array5Array2atGcE(cs, 0) === 38646 ? 1 : 0);
+    const names = _M0FP211localreview5cnnum6digits(true);
+    while (true) {
+      if (i.val < cs.length) {
+        if ((i.val + 1 | 0) >= cs.length) {
+          return new _M0DTPC16result6ResultGlRP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("fraction unit missing"));
+        }
+        const value = new _M0TPB8MutLocalGiE(-1);
+        const _bind$4 = 1;
+        const _bind$5 = 10;
+        let _tmp = _bind$4;
+        while (true) {
+          const n = _tmp;
+          if (n < _bind$5) {
+            if (_M0MPC15array5Array2atGsE(names, n) === _M0IPC14char4CharPB4Show10to__string(_M0MPC15array5Array2atGcE(cs, i.val))) {
+              value.val = n;
+            }
+            _tmp = n + 1 | 0;
+            continue;
+          } else {
+            break;
+          }
+        }
+        if (value.val < 1) {
+          return new _M0DTPC16result6ResultGlRP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("fraction digit"));
+        }
+        if (_M0MPC15array5Array2atGcE(cs, i.val + 1 | 0) === 35282) {
+          fraction.val = fraction.val + (Math.imul(value.val, 10) | 0) | 0;
+        } else {
+          if (_M0MPC15array5Array2atGcE(cs, i.val + 1 | 0) === 20998) {
+            fraction.val = fraction.val + value.val | 0;
+          } else {
+            return new _M0DTPC16result6ResultGlRP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("fraction unit"));
+          }
+        }
+        i.val = i.val + 2 | 0;
+        continue;
+      } else {
+        break;
+      }
+    }
+  }
+  const amount = BigInt.asUintN(64, BigInt.asUintN(64, BigInt.asUintN(64, whole * 100n) + BigInt.asUintN(64, BigInt(fraction.val))) * (negative ? 18446744073709551615n : 1n));
+  const _bind$4 = _M0FP211localreview5cnnum13format__money(amount);
+  let _tmp;
+  if (_bind$4.$tag === 1) {
+    const _ok = _bind$4;
+    _tmp = _ok._0;
+  } else {
+    return _bind$4;
+  }
+  if (_M0IP016_24default__implPB2Eq10not__equalGsE(_tmp, source$2)) {
+    return new _M0DTPC16result6ResultGlRP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("noncanonical financial amount"));
+  }
+  return new _M0DTPC16result6ResultGlRP211localreview5cnnum11NumberErrorE2Ok(amount);
+}
 function _M0FP211localreview5cnnum21parse__decimal__cents(s) {
   if (s === "" || s.length > 32) {
     return new _M0DTPC16result6ResultGlRP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("invalid amount"));
@@ -2811,6 +3777,305 @@ function _M0FP211localreview5cnnum21parse__decimal__cents(s) {
   }
   return new _M0DTPC16result6ResultGlRP211localreview5cnnum11NumberErrorE2Ok(BigInt.asUintN(64, BigInt.asUintN(64, BigInt.asUintN(64, whole.val * 100n) + fraction.val) * (neg ? 18446744073709551615n : 1n)));
 }
+function _M0FP211localreview5cnnum14decimal__parts(source) {
+  if (_M0MPC16string6String9is__empty(source) || source.length > 256) {
+    return new _M0DTPC16result6ResultGUbsOsERP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("decimal length 1..256"));
+  }
+  const _bind = "-";
+  const negative = _M0MPC16string6String11has__prefix(source, new _M0TPC16string10StringView(_bind, 0, _bind.length));
+  const body = negative ? _M0MPC16string10StringView9to__owned(_M0MPC16string6String11sub_2einner(source, 1, undefined)) : source;
+  const _bind$2 = ".";
+  const parts = _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPC16string6String5split(body, new _M0TPC16string10StringView(_bind$2, 0, _bind$2.length)));
+  if (parts.length > 2 || _M0MPB4Iter3anyGRPC16string10StringViewE(_M0MPC15array5Array4iterGRPC16string10StringViewE(parts), (p) => _M0MPC16string10StringView9is__empty(p))) {
+    return new _M0DTPC16result6ResultGUbsOsERP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("decimal requires digits on both sides of the point"));
+  }
+  const _bind$3 = parts.length;
+  let _tmp = 0;
+  while (true) {
+    const _ = _tmp;
+    if (_ < _bind$3) {
+      const part = parts[_];
+      if (!_M0MPB4Iter3allGcE(_M0MPC16string10StringView4iter(part), (c) => c >= 48 && c <= 57)) {
+        return new _M0DTPC16result6ResultGUbsOsERP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("ASCII decimal digits required"));
+      }
+      _tmp = _ + 1 | 0;
+      continue;
+    } else {
+      break;
+    }
+  }
+  return new _M0DTPC16result6ResultGUbsOsERP211localreview5cnnum11NumberErrorE2Ok({ _0: negative, _1: _M0MPC16string10StringView9to__owned(_M0MPC15array5Array2atGsE(parts, 0)), _2: parts.length === 2 ? _M0MPC16string10StringView9to__owned(_M0MPC15array5Array2atGsE(parts, 1)) : undefined });
+}
+function _M0FP211localreview5cnnum22format__digits_2einner(source, financial) {
+  const _bind = _M0FP211localreview5cnnum14decimal__parts(source);
+  if (_bind.$tag === 1) {
+    const _ok = _bind;
+    _ok._0;
+  } else {
+    return _bind;
+  }
+  const names = _M0FP211localreview5cnnum6digits(financial);
+  const out = _M0MPB13StringBuilder21StringBuilder_2einner(0);
+  const _it = _M0MPC16string6String4iter(source);
+  while (true) {
+    let c;
+    _L: {
+      const _bind$2 = _M0MPB4Iter4nextGcE(_it);
+      if (_bind$2 === -1) {
+        break;
+      } else {
+        const _Some = _bind$2;
+        const _c = _Some;
+        c = _c;
+        break _L;
+      }
+    }
+    let _tmp;
+    switch (c) {
+      case 45: {
+        _tmp = "负";
+        break;
+      }
+      case 46: {
+        _tmp = "点";
+        break;
+      }
+      default: {
+        _tmp = _M0MPC15array5Array2atGsE(names, c - 48 | 0);
+      }
+    }
+    _M0IPB13StringBuilderPB6Logger13write__string(out, _tmp);
+    continue;
+  }
+  return new _M0DTPC16result6ResultGsRP211localreview5cnnum11NumberErrorE2Ok(_M0MPB13StringBuilder10to__string(out));
+}
+function _M0FP211localreview5cnnum21parse__digits_2einner(source, variants) {
+  if (_M0MPC16string6String9is__empty(source) || source.length > 256) {
+    return new _M0DTPC16result6ResultGsRP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("digit text length 1..256"));
+  }
+  const source$2 = _M0FP211localreview5cnnum9normalize(variants ? _M0FP211localreview5cnnum17numeral__variants(source) : source);
+  const names = _M0FP211localreview5cnnum6digits(false);
+  const out = _M0MPB13StringBuilder21StringBuilder_2einner(0);
+  const _it = _M0MPC16string6String4iter(source$2);
+  while (true) {
+    let c;
+    _L: {
+      const _bind = _M0MPB4Iter4nextGcE(_it);
+      if (_bind === -1) {
+        break;
+      } else {
+        const _Some = _bind;
+        const _c = _Some;
+        c = _c;
+        break _L;
+      }
+    }
+    if (c === 36127) {
+      _M0IPB13StringBuilderPB6Logger11write__char(out, 45);
+      continue;
+    }
+    if (c === 28857) {
+      _M0IPB13StringBuilderPB6Logger11write__char(out, 46);
+      continue;
+    }
+    const digit = new _M0TPB8MutLocalGiE(-1);
+    const _bind = names.length;
+    let _tmp = 0;
+    while (true) {
+      const i = _tmp;
+      if (i < _bind) {
+        const name = names[i];
+        if (name === _M0IPC14char4CharPB4Show10to__string(c)) {
+          digit.val = i;
+          break;
+        }
+        _tmp = i + 1 | 0;
+        continue;
+      } else {
+        break;
+      }
+    }
+    if (digit.val < 0) {
+      return new _M0DTPC16result6ResultGsRP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("expected individual Chinese digit"));
+    }
+    _M0IPB13StringBuilderPB6Logger11write__char(out, digit.val + 48 | 0);
+    continue;
+  }
+  const result = _M0MPB13StringBuilder10to__string(out);
+  const _bind = _M0FP211localreview5cnnum14decimal__parts(result);
+  if (_bind.$tag === 1) {
+    const _ok = _bind;
+    _ok._0;
+  } else {
+    return _bind;
+  }
+  return new _M0DTPC16result6ResultGsRP211localreview5cnnum11NumberErrorE2Ok(result);
+}
+function _M0FP211localreview5cnnum23format__decimal_2einner(source, financial) {
+  let whole;
+  let negative;
+  let fraction;
+  _L: {
+    const _bind = _M0FP211localreview5cnnum14decimal__parts(source);
+    let _bind$2;
+    if (_bind.$tag === 1) {
+      const _ok = _bind;
+      _bind$2 = _ok._0;
+    } else {
+      return _bind;
+    }
+    const _negative = _bind$2._0;
+    const _whole = _bind$2._1;
+    const _fraction = _bind$2._2;
+    whole = _whole;
+    negative = _negative;
+    fraction = _fraction;
+    break _L;
+  }
+  const value = new _M0TPB8MutLocalGlE(0n);
+  const _it = _M0MPC16string6String4iter(whole);
+  while (true) {
+    let c;
+    _L$2: {
+      const _bind = _M0MPB4Iter4nextGcE(_it);
+      if (_bind === -1) {
+        break;
+      } else {
+        const _Some = _bind;
+        const _c = _Some;
+        c = _c;
+        break _L$2;
+      }
+    }
+    const digit = BigInt.asUintN(64, BigInt(c - 48 | 0));
+    const _tmp = value.val;
+    if (10n === 0n) {
+      $panic();
+    }
+    if (BigInt.asIntN(64, _tmp) > BigInt.asIntN(64, BigInt.asUintN(64, BigInt.asIntN(64, BigInt.asUintN(64, 9999999999999999n - digit)) / BigInt.asIntN(64, 10n)))) {
+      return new _M0DTPC16result6ResultGsRP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("integer outside supported range"));
+    }
+    value.val = BigInt.asUintN(64, BigInt.asUintN(64, value.val * 10n) + digit);
+    continue;
+  }
+  const _tmp = negative ? "负" : "";
+  const _bind = _M0FP211localreview5cnnum23format__integer_2einner(value.val, financial);
+  let _tmp$2;
+  if (_bind.$tag === 1) {
+    const _ok = _bind;
+    _tmp$2 = _ok._0;
+  } else {
+    return _bind;
+  }
+  const result = new _M0TPB8MutLocalGsE(`${_tmp}${_tmp$2}`);
+  let text;
+  _L$2: {
+    _L$3: {
+      if (fraction === undefined) {
+      } else {
+        const _Some = fraction;
+        const _text = _Some;
+        text = _text;
+        break _L$3;
+      }
+      break _L$2;
+    }
+    if (text.length > 64) {
+      return new _M0DTPC16result6ResultGsRP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("at most 64 fractional digits"));
+    }
+    const _tmp$3 = result.val;
+    const _bind$2 = _M0FP211localreview5cnnum22format__digits_2einner(text, financial);
+    let _tmp$4;
+    if (_bind$2.$tag === 1) {
+      const _ok = _bind$2;
+      _tmp$4 = _ok._0;
+    } else {
+      return _bind$2;
+    }
+    result.val = `${_tmp$3}点${_tmp$4}`;
+  }
+  return new _M0DTPC16result6ResultGsRP211localreview5cnnum11NumberErrorE2Ok(result.val);
+}
+function _M0FP211localreview5cnnum22parse__decimal_2einner(source, variants) {
+  if (_M0MPC16string6String9is__empty(source) || source.length > 256) {
+    return new _M0DTPC16result6ResultGsRP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("decimal text length 1..256"));
+  }
+  const source$2 = variants ? _M0FP211localreview5cnnum17numeral__variants(source) : source;
+  const _bind = "负";
+  const negative = _M0MPC16string6String11has__prefix(source$2, new _M0TPC16string10StringView(_bind, 0, _bind.length));
+  const body = negative ? _M0MPC16string10StringView9to__owned(_M0MPC16string6String11sub_2einner(source$2, 1, undefined)) : source$2;
+  const _bind$2 = "点";
+  const parts = _M0MPB4Iter9to__arrayGRPC16string10StringViewE(_M0MPC16string6String5split(body, new _M0TPC16string10StringView(_bind$2, 0, _bind$2.length)));
+  let _tmp;
+  if (parts.length > 2) {
+    _tmp = true;
+  } else {
+    let _tmp$2;
+    if (_M0MPB4Iter3anyGRPC16string10StringViewE(_M0MPC15array5Array4iterGRPC16string10StringViewE(parts), (p) => _M0MPC16string10StringView9is__empty(p))) {
+      _tmp$2 = true;
+    } else {
+      const _bind$3 = "负";
+      _tmp$2 = _M0MPC16string6String8contains(body, new _M0TPC16string10StringView(_bind$3, 0, _bind$3.length));
+    }
+    _tmp = _tmp$2;
+  }
+  if (_tmp) {
+    return new _M0DTPC16result6ResultGsRP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("invalid Chinese decimal"));
+  }
+  const _bind$3 = _M0FP211localreview5cnnum22parse__integer_2einner(_M0MPC16string10StringView9to__owned(_M0MPC15array5Array2atGsE(parts, 0)), false);
+  let whole;
+  if (_bind$3.$tag === 1) {
+    const _ok = _bind$3;
+    whole = _ok._0;
+  } else {
+    return _bind$3;
+  }
+  const result = new _M0TPB8MutLocalGsE(`${negative ? "-" : ""}${_M0MPC15int645Int6418to__string_2einner(whole, 10)}`);
+  if (parts.length === 2) {
+    const _bind$4 = _M0FP211localreview5cnnum21parse__digits_2einner(_M0MPC16string10StringView9to__owned(_M0MPC15array5Array2atGsE(parts, 1)), false);
+    let fraction;
+    if (_bind$4.$tag === 1) {
+      const _ok = _bind$4;
+      fraction = _ok._0;
+    } else {
+      return _bind$4;
+    }
+    let _tmp$2;
+    if (fraction.length > 64) {
+      _tmp$2 = true;
+    } else {
+      let _tmp$3;
+      const _bind$5 = "-";
+      if (_M0MPC16string6String8contains(fraction, new _M0TPC16string10StringView(_bind$5, 0, _bind$5.length))) {
+        _tmp$3 = true;
+      } else {
+        const _bind$6 = ".";
+        _tmp$3 = _M0MPC16string6String8contains(fraction, new _M0TPC16string10StringView(_bind$6, 0, _bind$6.length));
+      }
+      _tmp$2 = _tmp$3;
+    }
+    if (_tmp$2) {
+      return new _M0DTPC16result6ResultGsRP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("invalid decimal fraction"));
+    }
+    result.val = `${result.val}.${fraction}`;
+  }
+  return new _M0DTPC16result6ResultGsRP211localreview5cnnum11NumberErrorE2Ok(result.val);
+}
+function _M0FP211localreview5cnnum22format__decimal__cents(cents) {
+  if (BigInt.asIntN(64, cents) < BigInt.asIntN(64, 18436744073709551617n) || BigInt.asIntN(64, cents) > BigInt.asIntN(64, 9999999999999999n)) {
+    return new _M0DTPC16result6ResultGsRP211localreview5cnnum11NumberErrorE3Err(new _M0DTPC15error5Error43localreview_2fcnnum_2eNumberError_2eInvalid("amount outside supported range"));
+  }
+  const amount = BigInt.asIntN(64, cents) < BigInt.asIntN(64, 0n) ? BigInt.asUintN(64, -cents) : cents;
+  if (100n === 0n) {
+    $panic();
+  }
+  const fraction = Number(BigInt.asIntN(32, BigInt.asUintN(64, BigInt.asIntN(64, amount) % BigInt.asIntN(64, 100n)))) | 0;
+  const _tmp = BigInt.asIntN(64, cents) < BigInt.asIntN(64, 0n) ? "-" : "";
+  if (100n === 0n) {
+    $panic();
+  }
+  return new _M0DTPC16result6ResultGsRP211localreview5cnnum11NumberErrorE2Ok(`${_tmp}${_M0MPC15int645Int6418to__string_2einner(BigInt.asUintN(64, BigInt.asIntN(64, amount) / BigInt.asIntN(64, 100n)), 10)}.${fraction < 10 ? "0" : ""}${_M0MPC13int3Int18to__string_2einner(fraction, 10)}`);
+}
 function _M0FP411localreview5cnnum3cmd3web3run(input) {
   let _try_err;
   _L: {
@@ -2839,7 +4104,119 @@ function _M0FP411localreview5cnnum3cmd3web3run(input) {
   const e = _try_err;
   return `ERROR: ${_M0IP016_24default__implPB4Show10to__stringGRPC15debug4ReprE(_M0MPC15debug4Repr4ReprGRP211localreview5cnnum11NumberErrorE(e))}`;
 }
+function _M0FP411localreview5cnnum3cmd3web7convert(mode, source, financial, variants) {
+  let _try_err;
+  _L: {
+    switch (mode) {
+      case "decimal": {
+        const _bind = _M0FP211localreview5cnnum23format__decimal_2einner(source, financial);
+        if (_bind.$tag === 1) {
+          const _ok = _bind;
+          return _ok._0;
+        } else {
+          const _err = _bind;
+          _try_err = _err._0;
+          break _L;
+        }
+      }
+      case "parse-decimal": {
+        const _bind$2 = _M0FP211localreview5cnnum22parse__decimal_2einner(source, variants);
+        if (_bind$2.$tag === 1) {
+          const _ok = _bind$2;
+          return _ok._0;
+        } else {
+          const _err = _bind$2;
+          _try_err = _err._0;
+          break _L;
+        }
+      }
+      case "digits": {
+        const _bind$3 = _M0FP211localreview5cnnum22format__digits_2einner(source, financial);
+        if (_bind$3.$tag === 1) {
+          const _ok = _bind$3;
+          return _ok._0;
+        } else {
+          const _err = _bind$3;
+          _try_err = _err._0;
+          break _L;
+        }
+      }
+      case "parse-digits": {
+        const _bind$4 = _M0FP211localreview5cnnum21parse__digits_2einner(source, variants);
+        if (_bind$4.$tag === 1) {
+          const _ok = _bind$4;
+          return _ok._0;
+        } else {
+          const _err = _bind$4;
+          _try_err = _err._0;
+          break _L;
+        }
+      }
+      case "parse-integer": {
+        const _bind$5 = _M0FP211localreview5cnnum22parse__integer_2einner(source, variants);
+        let _tmp;
+        if (_bind$5.$tag === 1) {
+          const _ok = _bind$5;
+          _tmp = _ok._0;
+        } else {
+          const _err = _bind$5;
+          _try_err = _err._0;
+          break _L;
+        }
+        return _M0MPC15int645Int6418to__string_2einner(_tmp, 10);
+      }
+      case "money": {
+        const _bind$6 = _M0FP211localreview5cnnum21parse__decimal__cents(source);
+        let _tmp$2;
+        if (_bind$6.$tag === 1) {
+          const _ok = _bind$6;
+          _tmp$2 = _ok._0;
+        } else {
+          const _err = _bind$6;
+          _try_err = _err._0;
+          break _L;
+        }
+        const _bind$7 = _M0FP211localreview5cnnum13format__money(_tmp$2);
+        if (_bind$7.$tag === 1) {
+          const _ok = _bind$7;
+          return _ok._0;
+        } else {
+          const _err = _bind$7;
+          _try_err = _err._0;
+          break _L;
+        }
+      }
+      case "parse-money": {
+        const _bind$8 = _M0FP211localreview5cnnum20parse__money_2einner(source, variants);
+        let _tmp$3;
+        if (_bind$8.$tag === 1) {
+          const _ok = _bind$8;
+          _tmp$3 = _ok._0;
+        } else {
+          const _err = _bind$8;
+          _try_err = _err._0;
+          break _L;
+        }
+        const _bind$9 = _M0FP211localreview5cnnum22format__decimal__cents(_tmp$3);
+        if (_bind$9.$tag === 1) {
+          const _ok = _bind$9;
+          return _ok._0;
+        } else {
+          const _err = _bind$9;
+          _try_err = _err._0;
+          break _L;
+        }
+      }
+      default: {
+        _try_err = new _M0DTPC15error5Error48moonbitlang_2fcore_2fbuiltin_2eFailure_2eFailure("unknown conversion mode");
+        break _L;
+      }
+    }
+  }
+  const e = _try_err;
+  return `ERROR: ${_M0IP016_24default__implPB4Show10to__stringGRPC15debug4ReprE(_M0MPC15debug4Repr4ReprGRPC15error5ErrorE(e))}`;
+}
 (() => {
 })();
-export { _M0FP411localreview5cnnum3cmd3web3run as run }
+export { _M0FP411localreview5cnnum3cmd3web3run as run, _M0FP411localreview5cnnum3cmd3web7convert as convert }
 //# sourceMappingURL=web.js.map
