@@ -14,6 +14,8 @@ pub fn parse_decimal_cents(String) -> Int64 raise NumberError
 
 pub fn parse_integer(String) -> Int64 raise NumberError
 
+pub fn parse_money(String) -> Int64 raise NumberError
+
 // Errors
 pub suberror NumberError {
   Invalid(String)
