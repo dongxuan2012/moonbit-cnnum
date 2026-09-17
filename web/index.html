@@ -4,6 +4,15 @@
 <option value="money">金额 → 大写</option><option value="parse-money">大写金额 → 数字</option>
 <option value="decimal">小数 → 中文</option><option value="parse-decimal">中文小数 → 数字</option>
 <option value="digits">逐字转中文</option><option value="parse-digits">逐字转数字</option>
-<option value="parse-integer">中文整数 → 数字</option></select>
+<option value="parse-integer">中文整数 → 数字</option>
+<option value="smart">混合数字与单位 → 数字</option><option value="normal">口语省略 → 数字</option>
+<option value="strict">严格中文数字 → 数字</option><option value="standard">数字 → 中文（万亿分组）</option>
+<option value="rmb">数字 → 紧凑金额</option><option value="currency">自定义金额</option>
+<option value="text-cn">句子：中文 → 数字</option><option value="text-an">句子：数字 → 中文</option></select>
 <label><input id="financial" type="checkbox">财务大写</label>
-<label><input id="variants" type="checkbox">接受繁体与异体字</label><br><label for="input">输入</label><textarea id="input" spellcheck="false"></textarea><button id="run">运行实际 MoonBit 代码</button><button id="reset">恢复示例</button><p id="status"></p><div id="tiles" hidden></div><pre id="output"></pre></section><a href="../README.md">使用说明</a><a href="../pkg.generated.mbti">公共 API</a><a href="../DUPLICATION.md">查重记录</a><script type="module" src="app.mjs"></script></html>
+<label><input id="variants" type="checkbox">旧接口接受繁体与异体字</label>
+<div id="currency-options" hidden><label>金额前缀 <input id="currency-prefix" value="人民币" maxlength="32"></label>
+<label>元字 <select id="currency-yuan"><option>元</option><option>圆</option><option>圓</option></select></label>
+<label>超出两位小数 <select id="currency-rounding"><option value="reject">拒绝</option><option value="truncate">截断</option><option value="half-up">四舍五入</option></select></label>
+<label><input id="zero-yuan" type="checkbox">保留零元</label><label><input id="parentheses" type="checkbox">负数使用括号</label></div>
+<br><label for="input">输入</label><textarea id="input" spellcheck="false"></textarea><button id="run">转换</button><button id="reset">恢复示例</button><p id="status"></p><div id="tiles" hidden></div><pre id="output"></pre></section><a href="../README.md">使用说明</a><a href="../pkg.generated.mbti">公共 API</a><a href="../DUPLICATION.md">查重记录</a><script type="module" src="app.mjs"></script></html>

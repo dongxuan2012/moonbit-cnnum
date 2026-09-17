@@ -1,5 +1,6 @@
 import {
   "localreview/cnnum" @lib,
+  "moonbitlang/core/json",
 }
 
 supported_targets = "js"
@@ -7,5 +8,10 @@ supported_targets = "js"
 pkgtype(kind: "executable")
 
 options(
-  link: { "js": { "exports": [ "run", "convert" ], "format": "esm" } },
+  link: {
+    "js": {
+      "exports": [ "run", "convert", "convert_json", "benchmark_json" ],
+      "format": "esm",
+    },
+  },
 )

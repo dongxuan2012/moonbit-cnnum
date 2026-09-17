@@ -20,7 +20,7 @@ assert.equal(result.status,0,result.stderr);
 assert.deepEqual(JSON.parse(result.stdout),{ok:true,output:'一点一二三四五六七八九零一二三四五六七八九零'});
 assert(convert('parse-decimal','一点负二',false,false).startsWith('ERROR:'));
 writeFileSync(new URL('../evidence/decimal-focused-validation.json',import.meta.url),JSON.stringify({
-  date:new Date().toISOString(),moonTestsPassed:4,command:'moon test --target js --filter decimal* --deny-warn',
+  date:new Date().toISOString(),scope:'Legacy seven-mode bridge and CLI only; backend and independent-reference checks are recorded separately',
   bridgeGoldenCases:cases.length,cliExactPrecisionPassed:true,malformedBridgeRejected:true,
   engineSha256:createHash('sha256').update(readFileSync(new URL('../web/engine.mjs',import.meta.url))).digest('hex'),
   reference:'https://github.com/Ailln/cn2an',independentOracleRun:false,browserVisualTested:false,

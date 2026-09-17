@@ -1,89 +1,77 @@
-# 中文数字与金额
+# 中文数字与金额 · 0.4.0
 
-MoonBit 0.3.0 本地审查版本。支持中文整数、精确小数、逐字数字和人民币大写互转。
-原始字符串和整数分保留精度，不经浮点数转换；源码、工具和网页均在本独立仓库。
+独立 MoonBit 库，新增严格/口语/混合/逐字转换、句子日期/分数/百分比/温度/范围、精确可配置金额，以及 Node 文件、JSONL 和本地 HTTP 入口。原有整数、小数和金额 API 保持原契约。全部本地，未上传；完整追平 20 项目标仍未完成。
 
-## 直接试用
+## 直接使用
 
-`./start-review.ps1` 后打开 http://127.0.0.1:8780/web/ 。页面提供七种转换方式，接受自定义输入，
-可选择财务大写或繁体/异体字输入；所有转换均调用已编译的 MoonBit 引擎。
-
-Node.js 命令行（无需安装包）：
+Node.js 24，随仓库附本次编译引擎，无生产 Python 依赖：
 
 ```powershell
-node tools/cli.mjs --mode decimal --input '-0.0012300'
-# 负零点零零一二三零零
-node tools/cli.mjs --mode parse-decimal --input '十二点三零零' --json
-# {"ok":true,"output":"12.300"}
-node tools/cli.mjs --mode parse-money --variants --input '負貳圓正'
-# -2.00
-node tools/cli.mjs --mode digits --input '002026'
-# 零零二零二六
+node tools/number-cli.mjs cn2an --mode smart --input '1万2千3百45'
+# 12345
+node tools/number-cli.mjs cn2an --mode normal --input '一万二'
+# 12000
+node tools/number-cli.mjs transform --direction an2cn --input '2026年9月17日，增长12.5%，比例2/3。'
+node tools/number-cli.mjs currency --rounding half-up --prefix 人民币 --parentheses --input '-9.995'
+# 人民币（壹拾元整）
+node tools/number-cli.mjs spans --input '😀第十二章，共1百23元'
+node tools/number-cli.mjs jsonl --file requests.jsonl
 ```
 
-模式：money、parse-money、decimal、parse-decimal、digits、parse-digits、parse-integer。
-`--financial` 选择财务大写，`--variants` 接受文末所列异体字。`--file` 读取 UTF-8 文件，
-未指定输入源时读取标准输入；`--json` 输出结构化结果。
-保留旧版未传 `--mode` 的金额演示入口及退出码：成功 0、无效转换输入 2、宿主/参数错误 1。
-新模式严格使用输入文本，文件或标准输入的末尾换行也会检查。
+普通命令接受 `--input TEXT`、`--file PATH` 或 UTF-8 stdin；`--json` 返回 `{ok,result}` 或 `{ok:false,error}`。JSONL 每行一个完整请求，逐条输出并处理后续记录；任一记录被拒绝则退出 2，宿主/参数/UTF-8 错误退出 1，全部成功退出 0。输出遵守 stdout 背压。文本文件最多 2 MiB，JSONL 按行有界读取，不把整个文件载入内存。
 
-## 公共 API
+```json
+{"operation":"cn2an","input":"1百23","mode":"smart"}
+{"operation":"transform","input":"三分之二，百分之十二点五"}
+{"operation":"currency","input":"0.005","rounding":"half-up","zeroYuan":true}
+```
 
-| 接口 | 输入与结果 |
-| --- | --- |
-| format_integer / parse_integer | Int64 与规范中文整数互转 |
-| format_decimal / parse_decimal | ASCII 小数字符串与中文小数互转，保留小数末尾零和负零 |
-| format_digits / parse_digits | 逐字互转，不解释十百千万，保留前导零 |
-| format_money / parse_money | 精确整数分与规范大写金额互转 |
-| parse_decimal_cents / format_decimal_cents | ASCII 金额与整数分互转，后者总输出两位小数 |
+`./start-review.ps1` 启动网页。页面提供现有规范转换和新增模式，可调金额前缀、元字、舍入、零元和负数括号。本次已在实际浏览器检查六组路径与页面布局，不代表所有浏览器/设备验收。
 
-`financial=true` 用于 format_integer、format_decimal、format_digits。
-`variants=true` 用于 parse_integer、parse_decimal、parse_digits、parse_money；默认关闭。
-公共 API 清单由工具链生成，见 [pkg.generated.mbti](pkg.generated.mbti)。
+## MoonBit API
+
+| 接口 | 契约 |
+|---|---|
+| `cn2an(text, mode="strict")` | 返回精确十进制字符串；严格拼写、不推断末尾省略 |
+| `cn2an(..., mode="normal")` | 另接受逐字数串、两/〇、末位省略；如一百二→120、一万二→12000 |
+| `cn2an(..., mode="smart")` | 另展开阿拉伯数字段、全角数和单个单位的小数系数；如1百23、1.2万 |
+| `cn2an(..., mode="direct")` | 逐字转数字，保留前后零和负零；不解释单位 |
+| `an2cn(text, mode="low" / "up")` | 万/亿分组，小数原样保留；up 为财务大写 |
+| `an2cn(..., mode="direct")` | 逐字转写数字、减号和小数点，包括未构成完整数值的字串 |
+| `an2cn(..., mode="rmb")` | 紧凑人民币写法，小于一元省略零元；超出两位小数显式采用截断规则 |
+| `format_currency` | 默认拒绝多于两位小数；可选 truncate/half-up、元字/整字/前缀、零元和负数括号 |
+| `transform` / `transform_spans` | 双向词法转换；后者附原文、替换文本、类别和 UTF-16 起止位置 |
 
 ```moonbit
-let text = @cnnum.format_decimal("12.300") // 十二点三零零
-let exact = @cnnum.parse_decimal(text) // 12.300
-let cents = @cnnum.parse_money("負貳圓正", variants=true) // -200
-let amount = @cnnum.format_decimal_cents(cents) // -2.00
+let amount = @cnnum.cn2an("负1.23456789万", mode="smart") // -12345.6789
+let text = @cnnum.transform("三分之二，百分之十二点五") // 2/3，12.5%
+let currency = @cnnum.format_currency("9.995", rounding="half-up") // 壹拾元整
 ```
 
-## 输入契约与范围
+`format_currency` 的命名参数为 `zero_yuan`、`yuan`、`whole_suffix`、`prefix`、`rounding`、`parentheses`。Node JSON 请求使用 `zeroYuan`、`wholeSuffix`。API 清单见 [pkg.generated.mbti](pkg.generated.mbti)。
 
-- 中文整数的绝对值最多 9,999,999,999,999,999；兆固定为 10^12。
-- 小数整数部分沿用上述范围，小数部分最多 64 位，不接受指数、千分符、加号或空白。
-  小数格式化会规范化整数前导零；逐字模式保留前导零。逐字模式总长度最多 256 字符。
-- 金额绝对值最多 99,999,999,999,999.99 元，只接受精确角分，超过两位小数会报错，不自动舍入。
-- 异体字选项映射 負/萬/億/貳/參/陸/兩/两/〇/點；金额另支持 圓/圆→元、正→整。
-  映射后仍检查规范结构，“一万二”等省略表达不会推断成某个金额。
-- Money 采用本库规范形式：如零元壹角、壹元零伍分。异体字选项不是任意自然语言金额解析器。
+原有 `format_integer/parse_integer` 使用兆=10^12，仍只接受规范中文；`format_decimal/parse_decimal` 保留最多 64 位精确小数和负零；`format_digits/parse_digits` 保留前导零且要求合法数值结构；`format_money/parse_money` 仍是精确分、规范零元的双向接口。旧 `tools/cli.mjs` 继续可用。新模式不会悄悄改变这些原契约。
 
-## 验证与开发
+## Node 与 HTTP
 
-安装 MoonBit 后运行 `./verify.ps1`，或传 `-MoonPath` 指定编译器路径。
-该脚本为完整本项目工作流；仅改动小数模块时可运行：
-
-```powershell
-moon test --target js --filter 'decimal*' --deny-warn
-moon info
-moon build --target js --deny-warn
-# 更新 web/engine.mjs 为本次编译产物后
-node tools/test-convert.mjs
+```javascript
+import {convertNumber} from './tools/convert.mjs';
+const result = convertNumber({operation:'cn2an', input:'9007199254740993', mode:'smart'});
+// "9007199254740993"；数值输入必须为字符串
 ```
 
-本轮执行了 4 组新增 MoonBit 测试、7 种实际编译入口的固定值验证、精确长小数 CLI 验证和错误输入验证，
-记录在 [evidence/decimal-focused-validation.json](evidence/decimal-focused-validation.json)。
-覆盖最大金额、负零、30 位小数、前后导零、显式异体字及格式拒绝。
-旧整数和金额的大规模往返记录属于历史验证，本轮没有重复运行全量测试。
-网页已接入接口，本轮未进行浏览器视觉验收。未执行独立 cn2an 程序对照。
+运行 `node tools/http.mjs` 后默认监听 `127.0.0.1:8781`，环境变量 `PORT` 可改端口。`POST /convert` 接受上述 JSON 对象；`GET /health` 检查状态。成功 200、转换拒绝 422、无效 JSON/UTF-8 400、超限 413、类型 415；有请求/头部超时。该入口是本库本地 API，不声称与 cn2an 的公开 HTTP URL/部署接口完全相同，没有安装后台服务。
 
-## 对标与剩余差距
+## 独立证据与差异
 
-参照 [cn2an 官方功能说明](https://github.com/Ailln/cn2an)比较了小数、逐字模式和金额能力。
-尚缺混合阿拉伯/中文单位解析、句子中的日期/分数/百分比转换、更多口语规范与可配置金额输出风格。
-这些差距仍保留在后续计划中，本版不声称已全面追平参照项目。
-本项目按明确规则自行实现，没有复制参照项目源码或测试集，原创代码采用 MIT。
-查重检索范围见 [DUPLICATION.md](DUPLICATION.md)，不能据此保证没有同类项目。
+固定未修改的 [cn2an 0.5.24](https://pypi.org/project/cn2an/0.5.24/) 和 proces 0.1.7，执行 1476 个独立比较：1466 项一致、10 项有意保留差异、0 项未解释差异。10 项不是通过数：涉及保留混合小数余量/负号、亿后十万的正确求和、拒绝重复符号、温度的中文小数点/负号，以及句中混合数转换。逐项输入、双方输出和原因见 [对照报告](evidence/number-reference-validation.json)。
 
-仅保存在本地，没有设置远程仓库、上传或发布。`localreview` 为本地命名空间。
-当前源码是后续开发主版本，旧批次及 ZIP/bundle 为历史审查快照，本轮未重新打包。
+118 个官方固定向量在 JS/Wasm-GC 各执行；两个后端各 15 组核心检查。11 组真实 CLI/API/HTTP 检查含 12000 条 JSONL、慢输出读取、UTF-8、超长输入、分块请求和并发。四组同机核心计时及结果对照已保存，范围限这些样本，见 [验证与复现](TESTING.md)。
+
+## 范围与剩余工作
+
+数值输入最多 256 个 UTF-16 单元，整数最多 16 位（绝对值≤9999999999999999）、小数最多 64 位。句子最多 262144 个 UTF-16 单元；位置为半开 UTF-16 区间，包含 emoji 时可直接用于 JS slice。原有金额接口范围较小，为绝对值≤99999999999999.99 元。所有精确接口均不经过二进制浮点舍入。
+
+句子转换是确定性词法处理，不识别成语、人名、版本号或真实日期是否合法；如“一心一意”中的一也可能被转换。`direct=true` 只逐字处理，不做分数/日期/温度等特殊规则；无效的最大数字片段保留原文。
+
+尚需更大真实语料、完整上游边界/多版本对照、更多地区/方言规则、HTTP 部署/长期故障和跨平台/内存验证；10 项差异保持可见，不宣称全面兼容。原始代码为本项目原创 MIT，官方 Python 包仅为本地开发参考依赖，未复制其源码或测试集。仓库无 remote；旧 ZIP/Git bundle 未更新，远端 CI 未运行。

@@ -1,0 +1,43 @@
+{
+  "utc": "2026-09-17T13:26:28.945131+00:00",
+  "method": "Actual Codex in-app browser via CUA; final rebuilt page reloaded before six groups",
+  "engineSha256": "f9511c7852fb2569e00255441815698d472b0415cf91a236b8aace9455e2193c",
+  "groups": 6,
+  "checks": [
+    {
+      "mode": "smart",
+      "output": "12345"
+    },
+    {
+      "mode": "normal",
+      "output": "12000"
+    },
+    {
+      "mode": "text-cn",
+      "output": "2026年9月17日，增长12.5%，温度-3℃。"
+    },
+    {
+      "mode": "text-an",
+      "output": "二零二六年九月十七日，完成百分之十二点五，比例三分之二。"
+    },
+    {
+      "mode": "currency default",
+      "output": "人民币负壹仟贰佰叁拾肆元零伍分"
+    },
+    {
+      "mode": "currency reject followed by half-up and parentheses",
+      "input": "-9.995",
+      "rejectedBeforeRounding": true,
+      "output": "人民币（壹拾元整）"
+    }
+  ],
+  "consoleErrors": 0,
+  "layout": {
+    "desktopViewportCssPixels": 1265,
+    "documentScrollWidth": 1265,
+    "visualScreenshotInspected": true,
+    "scope": "One desktop viewport; not cross-browser/mobile/accessibility acceptance"
+  },
+  "cleanup": "Temporary browser tab closed; owned preview process 34872 stopped and absence checked",
+  "screenshotArtifact": "Observed in task history; no screenshot file bundled"
+}

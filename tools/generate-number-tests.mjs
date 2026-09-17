@@ -1,0 +1,7 @@
+import fs from 'node:fs';
+const saved=JSON.parse(fs.readFileSync(new URL('../evidence/number-reference-vectors.json',import.meta.url))),known=JSON.parse(fs.readFileSync(new URL('./known-differences.json',import.meta.url))),groups=new Map(),selected=[];
+for(const c of saved.cases){if(known.some(k=>Object.entries(c.request).every(([key,value])=>k[key]===value)))continue;const r=c.request,key=[r.operation,r.mode,r.direction,r.direct,c.expected.ok].join('/');const count=groups.get(key)??0;if(count<6){groups.set(key,count+1);selected.push(c);}}
+const lines=['///|','test "official cn2an cross-backend golden acceptance and values" {','  let cases = ['];
+for(const c of selected){const r=c.request;lines.push('    ('+[r.operation,r.input,r.mode??'',r.direction??'cn2an',r.direct??false,c.expected.ok,c.expected.result??''].map(x=>JSON.stringify(x)).join(', ')+'),');}
+lines.push('  ]','  for (operation, source, mode, direction, direct, accepted, expected) in cases {','    let result = try {','      let actual = match operation {','        "cn2an" => @cnnum.cn2an(source, mode~)','        "an2cn" => @cnnum.an2cn(source, mode~)','        _ => @cnnum.transform(source, direction~, direct~)','      }','      accepted && actual == expected','    } catch { _ => !accepted }','    assert_true(result, msg=operation + "/" + mode + ": " + source)','  }','}','');
+fs.writeFileSync(new URL('../reference_vectors_test.mbt',import.meta.url),lines.join('\n'));console.log(`Generated ${selected.length} official cross-backend cases`);

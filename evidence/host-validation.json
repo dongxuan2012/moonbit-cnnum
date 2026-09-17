@@ -1,0 +1,19 @@
+{
+  "utc": "2026-09-17T13:20:54.813Z",
+  "passed": 11,
+  "checks": [
+    "Exact string API, unsafe number and invalid option rejection",
+    "Actual JS Unicode span offsets",
+    "CLI modes, options, stdin and nonzero errors",
+    "File input and strict UTF-8",
+    "JSONL continues after a rejected record and returns failure status",
+    "12000 streamed JSONL records with a slow output reader",
+    "Maximum sentence and bounded invalid numeral run",
+    "Real loopback HTTP health, conversion and rejected input",
+    "HTTP JSON, UTF-8, type, method, path and declared-size errors",
+    "HTTP chunked body limit",
+    "Concurrent independent HTTP requests"
+  ],
+  "streamingJsonlRecords": 12000,
+  "http": "Actual loopback Node HTTP; service closed after checks"
+}

@@ -1,4 +1,4 @@
-param([string]$MoonPath)
+param([string]$MoonPath, [switch]$WithReference, [switch]$WithBenchmark)
 $ErrorActionPreference='Stop'
 if (-not $MoonPath) {
   $available=Get-Command moon -ErrorAction SilentlyContinue
@@ -9,6 +9,8 @@ $env:MOON_HOME=Split-Path (Split-Path $MoonPath -Parent) -Parent
 $env:PATH="$(Split-Path $MoonPath -Parent);$env:PATH"
 Push-Location $PSScriptRoot
 try {
+  node tools/generate-number-tests.mjs
+  if ($LASTEXITCODE -ne 0) {throw 'reference test generation failed'}
   & $MoonPath fmt
   if ($LASTEXITCODE -ne 0) {throw 'format failed'}
   & $MoonPath info
@@ -30,6 +32,14 @@ try {
   if ($LASTEXITCODE -ne 0) {throw 'browser engine test failed'}
   node tools/test-convert.mjs
   if ($LASTEXITCODE -ne 0) {throw 'conversion tests failed'}
+  if ($WithReference) { node tools/test-reference.mjs } else { node tools/test-reference.mjs --golden }
+  if ($LASTEXITCODE -ne 0) {throw 'official reference comparison failed'}
+  node tools/test-host.mjs
+  if ($LASTEXITCODE -ne 0) {throw 'structured CLI/API/HTTP checks failed'}
+  if ($WithBenchmark) {
+    node tools/benchmark-reference.mjs
+    if ($LASTEXITCODE -ne 0) {throw 'official reference benchmark failed'}
+  }
   node tools/test-cli.mjs
   if ($LASTEXITCODE -ne 0) {throw 'CLI test failed'}
   node tools/robustness.mjs

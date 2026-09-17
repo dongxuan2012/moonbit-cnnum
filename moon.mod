@@ -1,9 +1,9 @@
 name = "localreview/cnnum"
 
-version = "0.3.0"
+version = "0.4.0"
 
 license = "MIT"
 
 readme = "README.md"
 
-description = "确定性整数中文读写和精确分单位大写金额"
+description = "精确中文数字、混合单位、句子转换与可配置人民币金额"

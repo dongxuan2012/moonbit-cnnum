@@ -6,6 +6,12 @@ import {
 }
 
 // Values
+pub fn an2cn(String, mode? : String) -> String raise NumberError
+
+pub fn cn2an(String, mode? : String) -> String raise NumberError
+
+pub fn format_currency(String, zero_yuan? : Bool, yuan? : String, whole_suffix? : String, prefix? : String, rounding? : String, parentheses? : Bool) -> String raise NumberError
+
 pub fn format_decimal(String, financial? : Bool) -> String raise NumberError
 
 pub fn format_decimal_cents(Int64) -> String raise NumberError
@@ -26,12 +32,23 @@ pub fn parse_integer(String, variants? : Bool) -> Int64 raise NumberError
 
 pub fn parse_money(String, variants? : Bool) -> Int64 raise NumberError
 
+pub fn transform(String, direction? : String, direct? : Bool) -> String raise NumberError
+
+pub fn transform_spans(String, direction? : String, direct? : Bool) -> Array[NumberSpan] raise NumberError
+
 // Errors
 pub suberror NumberError {
   Invalid(String)
 } derive(@debug.Debug)
 
 // Types and methods
+pub struct NumberSpan {
+  start : Int
+  end : Int
+  kind : String
+  source : String
+  replacement : String
+} derive(Eq, @debug.Debug)
 
 // Type aliases
 

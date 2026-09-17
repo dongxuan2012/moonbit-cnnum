@@ -8,6 +8,14 @@ pub fn convert(
 ) -> String {
   try {
     match mode {
+      "normal" => @lib.cn2an(source, mode="normal")
+      "smart" => @lib.cn2an(source, mode="smart")
+      "strict" => @lib.cn2an(source)
+      "standard" =>
+        @lib.an2cn(source, mode=if financial { "up" } else { "low" })
+      "rmb" => @lib.an2cn(source, mode="rmb")
+      "text-cn" => @lib.transform(source)
+      "text-an" => @lib.transform(source, direction="an2cn")
       "decimal" => @lib.format_decimal(source, financial~)
       "parse-decimal" => @lib.parse_decimal(source, variants~)
       "digits" => @lib.format_digits(source, financial~)

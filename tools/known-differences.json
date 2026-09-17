@@ -1,0 +1,12 @@
+[
+  {"operation":"cn2an","input":"1.23456789万","mode":"smart","result":"12345.6789","reason":"Preserve fractional remainder instead of truncating the scaled value"},
+  {"operation":"cn2an","input":"负1.2万","mode":"smart","result":"-12000","reason":"Preserve the explicit negative sign"},
+  {"operation":"cn2an","input":"一亿十万","mode":"strict","result":"100100000","reason":"Include the ten-wan component in the exact integer sum"},
+  {"operation":"cn2an","input":"一亿十万","mode":"normal","result":"100100000","reason":"Include the ten-wan component in the exact integer sum"},
+  {"operation":"cn2an","input":"一亿十万","mode":"smart","result":"100100000","reason":"Include the ten-wan component in the exact integer sum"},
+  {"operation":"cn2an","input":"负-1.2万","mode":"smart","reject":true,"reason":"Reject a duplicate sign rather than accepting conflicting prefixes"},
+  {"operation":"transform","input":"2024年12月31日，-3.5℃，12.5%，2/3","direction":"an2cn","direct":false,"result":"二零二四年十二月三十一日，负三点五摄氏度，百分之十二点五，三分之二","reason":"Use the Chinese decimal point in temperature text"},
+  {"operation":"transform","input":"12.30% 0.0℃ 3/0","direction":"an2cn","direct":false,"result":"百分之十二点三零 零点零摄氏度 零分之三","reason":"Use the Chinese decimal point in temperature text"},
+  {"operation":"transform","input":"😀共1百23元和两千四，精度零点零零一","direction":"cn2an","direct":false,"result":"😀共123元和2400，精度0.001","reason":"Apply smart mixed-number conversion inside sentences"},
+  {"operation":"transform","input":"📅2026年9月17日，温度-10℃，完成99%","direction":"an2cn","direct":false,"result":"📅二零二六年九月十七日，温度负十摄氏度，完成百分之九十九","reason":"Use the Chinese negative sign in temperature text"}
+]

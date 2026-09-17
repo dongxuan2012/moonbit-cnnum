@@ -1,11 +1,10 @@
 {
-  "date": "2026-09-10T14:05:08.086Z",
-  "moonTestsPassed": 4,
-  "command": "moon test --target js --filter decimal* --deny-warn",
+  "date": "2026-09-17T13:20:52.005Z",
+  "scope": "Legacy seven-mode bridge and CLI only; backend and independent-reference checks are recorded separately",
   "bridgeGoldenCases": 7,
   "cliExactPrecisionPassed": true,
   "malformedBridgeRejected": true,
-  "engineSha256": "9f9357f34850ed645c941af775aaffe521c02008a7de24da90789f607a22bc8c",
+  "engineSha256": "f9511c7852fb2569e00255441815698d472b0415cf91a236b8aace9455e2193c",
   "reference": "https://github.com/Ailln/cn2an",
   "independentOracleRun": false,
   "browserVisualTested": false

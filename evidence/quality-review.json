@@ -1,47 +1,54 @@
 {
   "project": "moonbit-cnnum",
-  "timestamp": "2026-09-10T10:39:24.561893+00:00",
-  "exit_code": 0,
-  "backend_test_counts": [
-    [
-      "5",
-      "5",
-      "0"
-    ],
-    [
-      "5",
-      "5",
-      "0"
-    ]
-  ],
-  "scope": "Local Windows verify.ps1; remote CI and full upstream conformance not run",
-  "coverage": {
-    "covered": 159,
-    "total": 168,
-    "measurement": "MoonBit instrumentation points, not upstream feature coverage"
+  "version": "0.4.0",
+  "utc": "2026-09-17T13:26:28.945131+00:00",
+  "localOnly": true,
+  "fullParity": false,
+  "verify": {
+    "command": "verify.ps1 -WithReference -WithBenchmark",
+    "exitCode": 0,
+    "jsGroups": 15,
+    "wasmGcGroups": 15,
+    "independentGoldenCasesPerBackend": 118,
+    "generatorFmtInfoIdempotentFiles": 21,
+    "consoleSha256": "bab6da3eb8fc1ad8a200a17ab583c3c9ebef744d1d45ce056bd370eed46a65bc"
+  },
+  "reference": {
+    "package": "cn2an==0.5.24",
+    "proces": "0.1.7",
+    "python": "3.14.4",
+    "total": 1476,
+    "matched": 1466,
+    "deliberateDifferences": 10,
+    "unexpectedDifferences": 0,
+    "comparisonScope": "Acceptance and output, not exact exception messages. Intentional differences are not compatibility passes."
+  },
+  "host": {
+    "groups": 11,
+    "jsonlRecords": 12000,
+    "http": "Actual loopback HTTP including chunked limits and concurrent requests; server closed"
+  },
+  "browser": {
+    "groups": 6,
+    "consoleErrors": 0,
+    "scope": "Actual desktop page interactions and layout; no mobile or cross-browser assertion"
   },
   "robustness": {
-    "project": "cnnum",
-    "seed": 20260910,
-    "cases": 307,
-    "expected_error_responses": 306,
-    "uncaught_exceptions": 0,
-    "scope": "bounded malformed-input robustness, not proof of full language/protocol conformance"
+    "legacyRawInputs": 307,
+    "scope": "Original entry only; not full fuzzing of new APIs"
   },
-  "benchmark": {
-    "project": "cnnum",
-    "utc": "2026-09-10T10:39:24.336Z",
-    "runtime": "v24.11.0",
-    "platform": "win32",
-    "cpu": "Intel(R) Core(TM) i7-14700HX",
-    "input_utf8_bytes": 11,
-    "samples": 30,
-    "warmup": 5,
-    "median_ms": 0.00730000000000075,
-    "p95_ms": 0.034199999999998454,
-    "max_ms": 0.03450000000000131,
-    "scope": "JS warm execution of documented example; no cross-project or upstream performance claim"
+  "performance": {
+    "groups": 4,
+    "outputEquality": true,
+    "scope": "3 warmups and 7 measured batches, median; same input strings and output equality; excludes JSON parsing/serialization and subprocess I/O. MoonBit returns exact decimal strings while Python cn2an returns numeric values; different runtimes and output contracts, no universal performance conclusion."
   },
-  "remote_ci": "not run",
-  "network_interoperability": "not run"
+  "coverage": "Not remeasured; historical instrumentation counts are not current feature coverage",
+  "remoteCI": "Not run",
+  "archivesRefreshed": false,
+  "remaining": [
+    "Broader real corpus and complete upstream boundary/version review",
+    "Documented behavior differences and expanded dialect/region rules",
+    "Long-term/deployment/cross-platform/browser and memory validation",
+    "Final 20-project source/evidence/archive alignment"
+  ]
 }

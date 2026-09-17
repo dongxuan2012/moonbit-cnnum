@@ -1,0 +1,193 @@
+{
+  "utc": "2026-09-17T13:20:53.224Z",
+  "mode": "live unmodified cn2an",
+  "reference": {
+    "reference": "cn2an==0.5.24",
+    "python": "3.14.4",
+    "proces": "0.1.7",
+    "packageSha256": {
+      "__init__.py": "73c73d3baaa678806ebe376d8852a12f1dc34ab179daf07510451d9f4453b83c",
+      "an2cn.py": "4eaa2c381a7ac8b40843a5ab02280647e8e3ce676c63c629998337bc7b10972c",
+      "an2cn_test.py": "70b27632735d9661e6006603c5f8da016d2a461201f044477511ea75a904eb05",
+      "cn2an.py": "4c6791e216855846595bf656969e4208f0b93a214c3d0548686f2ced02c4ecf1",
+      "cn2an_test.py": "c72a5271ff1cf4e456be1f9be86d62798bc5dc62e2291bd7b81ac319476aa24c",
+      "conf.py": "0f037fe7cdafaa4dcd5ef5759ee83ab8f134ff3f22cb9acaaab9116e879ef499",
+      "performance.py": "b76ef18c57f15bd47521a7cd8bbdc97374db05df893c4eb44dad4678a28b7e36",
+      "transform.py": "43709e8a4927cc0738e235910c9fde3395e71cce7912334be3be2939480c019e",
+      "transform_test.py": "ea3fd86162615d4064da5f8c2ee975606d22efa9fb0446d5e8fc83c6729e75a0",
+      "utils.py": "648ca1063915a8b9d4fd862a591ef916954609fc590db1bd54d12d8e3d0eb958"
+    }
+  },
+  "total": 1476,
+  "matched": 1466,
+  "deliberateDifferences": 10,
+  "unexpectedDifferences": 0,
+  "engineSha256": "f9511c7852fb2569e00255441815698d472b0415cf91a236b8aace9455e2193c",
+  "differences": [
+    {
+      "request": {
+        "operation": "cn2an",
+        "input": "1.23456789万",
+        "mode": "smart"
+      },
+      "expected": {
+        "ok": true,
+        "result": "12345"
+      },
+      "actual": {
+        "ok": true,
+        "result": "12345.6789"
+      },
+      "reason": "Preserve fractional remainder instead of truncating the scaled value"
+    },
+    {
+      "request": {
+        "operation": "cn2an",
+        "input": "负1.2万",
+        "mode": "smart"
+      },
+      "expected": {
+        "ok": true,
+        "result": "12000"
+      },
+      "actual": {
+        "ok": true,
+        "result": "-12000"
+      },
+      "reason": "Preserve the explicit negative sign"
+    },
+    {
+      "request": {
+        "operation": "cn2an",
+        "input": "一亿十万",
+        "mode": "strict"
+      },
+      "expected": {
+        "ok": true,
+        "result": "100000000"
+      },
+      "actual": {
+        "ok": true,
+        "result": "100100000"
+      },
+      "reason": "Include the ten-wan component in the exact integer sum"
+    },
+    {
+      "request": {
+        "operation": "cn2an",
+        "input": "一亿十万",
+        "mode": "normal"
+      },
+      "expected": {
+        "ok": true,
+        "result": "100000000"
+      },
+      "actual": {
+        "ok": true,
+        "result": "100100000"
+      },
+      "reason": "Include the ten-wan component in the exact integer sum"
+    },
+    {
+      "request": {
+        "operation": "cn2an",
+        "input": "一亿十万",
+        "mode": "smart"
+      },
+      "expected": {
+        "ok": true,
+        "result": "100000000"
+      },
+      "actual": {
+        "ok": true,
+        "result": "100100000"
+      },
+      "reason": "Include the ten-wan component in the exact integer sum"
+    },
+    {
+      "request": {
+        "operation": "cn2an",
+        "input": "负-1.2万",
+        "mode": "smart"
+      },
+      "expected": {
+        "ok": true,
+        "result": "-12000"
+      },
+      "actual": {
+        "ok": false,
+        "error": "Invalid(\"multiple signs\")"
+      },
+      "reason": "Reject a duplicate sign rather than accepting conflicting prefixes"
+    },
+    {
+      "request": {
+        "operation": "transform",
+        "input": "2024年12月31日，-3.5℃，12.5%，2/3",
+        "direction": "an2cn",
+        "direct": false
+      },
+      "expected": {
+        "ok": true,
+        "result": "二零二四年十二月三十一日，负三.五摄氏度，百分之十二点五，三分之二"
+      },
+      "actual": {
+        "ok": true,
+        "result": "二零二四年十二月三十一日，负三点五摄氏度，百分之十二点五，三分之二"
+      },
+      "reason": "Use the Chinese decimal point in temperature text"
+    },
+    {
+      "request": {
+        "operation": "transform",
+        "input": "12.30% 0.0℃ 3/0",
+        "direction": "an2cn",
+        "direct": false
+      },
+      "expected": {
+        "ok": true,
+        "result": "百分之十二点三零 零.零摄氏度 零分之三"
+      },
+      "actual": {
+        "ok": true,
+        "result": "百分之十二点三零 零点零摄氏度 零分之三"
+      },
+      "reason": "Use the Chinese decimal point in temperature text"
+    },
+    {
+      "request": {
+        "operation": "transform",
+        "input": "😀共1百23元和两千四，精度零点零零一",
+        "direction": "cn2an",
+        "direct": false
+      },
+      "expected": {
+        "ok": true,
+        "result": "😀共1百23元和2400，精度0.001"
+      },
+      "actual": {
+        "ok": true,
+        "result": "😀共123元和2400，精度0.001"
+      },
+      "reason": "Apply smart mixed-number conversion inside sentences"
+    },
+    {
+      "request": {
+        "operation": "transform",
+        "input": "📅2026年9月17日，温度-10℃，完成99%",
+        "direction": "an2cn",
+        "direct": false
+      },
+      "expected": {
+        "ok": true,
+        "result": "📅二零二六年九月十七日，温度-十摄氏度，完成百分之九十九"
+      },
+      "actual": {
+        "ok": true,
+        "result": "📅二零二六年九月十七日，温度负十摄氏度，完成百分之九十九"
+      },
+      "reason": "Use the Chinese negative sign in temperature text"
+    }
+  ],
+  "failures": []
+}

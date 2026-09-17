@@ -13,6 +13,7 @@ jobs:
           curl -fsSL https://cli.moonbitlang.com/install/unix.sh | bash
           echo "$HOME/.moon/bin" >> "$GITHUB_PATH"
       - run: moon version --all
+      - run: node tools/generate-number-tests.mjs
       - run: moon fmt && moon info && git diff --exit-code
       - run: moon check --deny-warn
       - run: moon test --target wasm-gc --deny-warn
@@ -24,6 +25,9 @@ jobs:
           test -n "$engine"
           cp "$engine" web/engine.mjs
       - run: node tools/test-demo.mjs
+      - run: node tools/test-convert.mjs
+      - run: node tools/test-reference.mjs --golden
+      - run: node tools/test-host.mjs
       - run: node tools/test-cli.mjs
       - run: node tools/robustness.mjs
       - run: node tools/benchmark.mjs
