@@ -1,4 +1,4 @@
-name = "localreview/cnnum"
+name = "dongxuan2012/cnnum"
 
 version = "0.4.0"
 
