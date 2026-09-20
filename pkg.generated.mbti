@@ -1,5 +1,5 @@
 // Generated using `moon info`, DON'T EDIT IT
-package "localreview/cnnum"
+package "dongxuan2012/cnnum"
 
 import {
   "moonbitlang/core/debug",

@@ -1,5 +1,5 @@
 import {
-  "localreview/cnnum" @lib,
+  "dongxuan2012/cnnum" @lib,
   "moonbitlang/core/json",
 }
 
