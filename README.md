@@ -1,6 +1,14 @@
 # 中文数字与金额 · 0.4.0
 
-独立 MoonBit 库，新增严格/口语/混合/逐字转换、句子日期/分数/百分比/温度/范围、精确可配置金额，以及 Node 文件、JSONL 和本地 HTTP 入口。原有整数、小数和金额 API 保持原契约。全部本地，未上传；完整追平 20 项目标仍未完成。
+## 获取与验证入口
+
+公开源码：[github.com/dongxuan2012/moonbit-cnnum](https://github.com/dongxuan2012/moonbit-cnnum)；MoonBit 模块名为 `dongxuan2012/cnnum`。
+
+从源码运行：`git clone https://github.com/dongxuan2012/moonbit-cnnum.git` 后进入该目录，按下文和 [TESTING.md](TESTING.md) 安装所需工具。仓库公开不等于已在 Mooncakes 发布，不承诺 `moon add` 当前可用。
+
+查看 [GitHub Actions](https://github.com/dongxuan2012/moonbit-cnnum/actions) 时请核对 run 的 commit SHA；历史 evidence、旧 ZIP 与本地测试不能替代当前提交的 CI 结果。下文保留各版本的验证范围和兼容性限制。
+
+> 历史开发记录（以下发布/归档状态不代表当前仓库；当前入口见文首）：独立 MoonBit 库，新增严格/口语/混合/逐字转换、句子日期/分数/百分比/温度/范围、精确可配置金额，以及 Node 文件、JSONL 和本地 HTTP 入口。原有整数、小数和金额 API 保持原契约。全部本地，未上传；完整追平 20 项目标仍未完成。
 
 ## 直接使用
 
@@ -74,4 +82,4 @@ const result = convertNumber({operation:'cn2an', input:'9007199254740993', mode:
 
 句子转换是确定性词法处理，不识别成语、人名、版本号或真实日期是否合法；如“一心一意”中的一也可能被转换。`direct=true` 只逐字处理，不做分数/日期/温度等特殊规则；无效的最大数字片段保留原文。
 
-尚需更大真实语料、完整上游边界/多版本对照、更多地区/方言规则、HTTP 部署/长期故障和跨平台/内存验证；10 项差异保持可见，不宣称全面兼容。原始代码为本项目原创 MIT，官方 Python 包仅为本地开发参考依赖，未复制其源码或测试集。仓库无 remote；旧 ZIP/Git bundle 未更新，远端 CI 未运行。
+> 历史开发记录（以下发布/归档状态不代表当前仓库；当前入口见文首）：尚需更大真实语料、完整上游边界/多版本对照、更多地区/方言规则、HTTP 部署/长期故障和跨平台/内存验证；10 项差异保持可见，不宣称全面兼容。原始代码为本项目原创 MIT，官方 Python 包仅为本地开发参考依赖，未复制其源码或测试集。仓库无 remote；旧 ZIP/Git bundle 未更新，远端 CI 未运行。
