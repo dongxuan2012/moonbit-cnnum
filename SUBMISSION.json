@@ -1,0 +1,17 @@
+{
+  "project": "cnnum",
+  "title": "精确中文数字、金额与文本区间转换",
+  "module": "dongxuan2012/cnnum",
+  "version": "0.4.0",
+  "repository": "https://github.com/dongxuan2012/moonbit-cnnum",
+  "status": "条件复审",
+  "remainingRisk": "必须用精度、金额和区间差异说明价值，不能只写中文数字转换。",
+  "actualUsersClaimed": false,
+  "anonymousCloneVerified": true,
+  "publicHead": "f303f821d706885e6f9a3c0c0e79e1073bcf87ab",
+  "defaultBranch": "origin/main",
+  "localChangesPublished": false,
+  "proposalLines": 25,
+  "useCase": "精确金额及原文区间转换",
+  "diff": "承认 bodymate/zhnum 已有中文数字反向解析与归一化。差异集中于精确十进制、多模式及金额舍入、原文区间回写，而非“中文数字反向解析空白”。"
+}

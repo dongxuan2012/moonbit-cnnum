@@ -1,0 +1,3 @@
+{"operation": "cn2an", "input": "九零零七一九九二五四七四零九九三", "mode": "direct"}
+{"operation": "currency", "input": "-9.995", "rounding": "half-up", "prefix": "人民币", "parentheses": true}
+{"operation": "spans", "input": "账单一百二十三元，折扣百分之十", "direction": "cn2an"}

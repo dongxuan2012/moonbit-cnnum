@@ -1,0 +1,3 @@
+{"ok":true,"result":"9007199254740993"}
+{"ok":true,"result":"人民币（壹拾元整）"}
+{"ok":true,"result":[{"start":2,"end":7,"kind":"number","source":"一百二十三","replacement":"123"},{"start":11,"end":15,"kind":"percent","source":"百分之十","replacement":"10%"}]}

@@ -1,0 +1,15 @@
+{
+  "title": "精确金额及原文区间转换",
+  "scope": "原创合成文本；演示精度/显式舍入/区间，不是财务认证。",
+  "steps": [
+    {
+      "args": [
+        "tools/number-cli.mjs",
+        "jsonl",
+        "--file",
+        "examples/use-case/requests.jsonl"
+      ]
+    }
+  ],
+  "expected": "大整数 9007199254740993 原样保留；-9.995 按 half-up 处理，区间使用 API 声明的 UTF-16 坐标。"
+}
