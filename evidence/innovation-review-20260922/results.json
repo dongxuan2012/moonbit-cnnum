@@ -1,0 +1,65 @@
+{
+  "date": "2026-09-22",
+  "project": "cnnum",
+  "package": "dongxuan2012/cnnum",
+  "version": "0.4.0",
+  "code_base_commit_before_materials": "957db856d492e8ad07b6c3d3452a52f92930f6f9",
+  "core_checks": [
+    {
+      "command": [
+        "moon",
+        "test",
+        "--target",
+        "js"
+      ],
+      "exit": 0,
+      "seconds": 2.86,
+      "log": "cnnum-test---target-js.log"
+    },
+    {
+      "command": [
+        "moon",
+        "test",
+        "--target",
+        "wasm-gc"
+      ],
+      "exit": 0,
+      "seconds": 1.54,
+      "log": "cnnum-test---target-wasm-gc.log"
+    },
+    {
+      "command": [
+        "moon",
+        "build",
+        "--target",
+        "js"
+      ],
+      "exit": 0,
+      "seconds": 1.16,
+      "log": "cnnum-build---target-js.log"
+    }
+  ],
+  "workflow_checks": [
+    {
+      "command": [
+        "node",
+        "tools/test-convert.mjs"
+      ],
+      "exit": 0,
+      "seconds": 0.59,
+      "log": "cnnum-workflow-0.log"
+    },
+    {
+      "command": [
+        "node",
+        "tools/test-host.mjs"
+      ],
+      "exit": 0,
+      "seconds": 3.09,
+      "log": "cnnum-workflow-1.log"
+    }
+  ],
+  "interpretation": "7 组转换模式及精度 CLI、本地宿主路径通过；金额示例输出人民币（壹拾元整）。",
+  "limit": "不是所有中文自然语言理解；不是金融计算认证。地区/口语歧义有显式模式，不能自动猜出所有作者意图。",
+  "remote_push_performed": false
+}
